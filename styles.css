@@ -33,9 +33,13 @@
 @media(max-width:560px){.site-footer{padding:0 6vw 35px}.footer-cta{padding:15vw 0 12vw}.footer-nav{grid-template-columns:1fr;gap:18px}.footer-legal{flex-direction:column;align-items:flex-start;gap:14px}}
 
 /* Logo */
+.nav{mix-blend-mode:normal!important;color:#101010!important;background:rgba(244,243,239,.88);backdrop-filter:blur(14px);border-bottom:1px solid rgba(16,16,16,.08)}
+.nav-links a,.nav-cta{color:#101010}
+.nav-cta{border-color:rgba(16,16,16,.28)}
+.menu span{background:#101010}
 .brand{mix-blend-mode:normal}
-.brand-logo{height:34px;width:auto;display:block;filter:brightness(0) invert(1)}
-.nav.nav-solid{mix-blend-mode:normal;color:#101010;background:rgba(244,243,239,.92);backdrop-filter:blur(14px);border-bottom:1px solid rgba(16,16,16,.08)}
-.nav.nav-solid .brand-logo{filter:none}
-.core-logo{width:88px;height:auto;display:block;margin-bottom:4px;opacity:.9}
-.footer-logo-img{height:42px;width:auto;display:block}
+.brand-logo{height:58px;width:auto;display:block;filter:none}
+.nav.nav-solid{background:rgba(244,243,239,.96)}
+.core-logo{width:110px;height:auto;display:block;margin-bottom:6px;opacity:.95}
+.footer-logo-img{height:72px;width:auto;display:block}
+@media(max-width:900px){.brand-logo{height:48px}.footer-logo-img{height:56px}.core-logo{width:90px}}
