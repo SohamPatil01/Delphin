@@ -61,20 +61,6 @@ body.intro-active .hero-continuation{opacity:0;pointer-events:none}
   transform:translateY(16px);
   transition:opacity .8s ease,transform .8s ease;
 }
-.hero-brand-e{position:relative;display:inline-block}
-.hero-brand-e::before{
-  content:"";
-  position:absolute;
-  left:.07em;
-  width:.48em;
-  top:50%;
-  height:.1em;
-  margin-top:-.05em;
-  background:#90b000;
-  transform:skewX(-14deg);
-  transform-origin:left center;
-  border-radius:1px;
-}
 .hero-tagline{font:700 clamp(1.15rem,3.4vw,2.1rem)/1.35 Manrope,sans-serif;letter-spacing:.02em;text-transform:none;color:#101010;margin:28px auto 0;max-width:640px;opacity:0;transform:translateY(20px) scale(.96);transition:opacity .8s ease,transform .8s cubic-bezier(.2,.7,.2,1)}
 .hero-tagline em{font-style:normal;color:#6b7c28}
 .hero-opener.is-enter .hero-welcome,.hero-opener.is-enter .hero-brand{opacity:1;transform:translateY(0)}
