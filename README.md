@@ -11,7 +11,6 @@ A polished, responsive static website concept for Delphin Inc.
 - Selected Work and Insights are intentionally marked as illustrative/demo content.
 - Team roles are provisional and should be updated with the actual responsibilities.
 - The contact email is a placeholder: `hello@delphininc.com`.
-- Replace the text-based D mark with the final Delphin logo when available.
 
 ## Run
 Open `index.html` in a browser, or serve the folder with any static server.

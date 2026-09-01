@@ -31,3 +31,11 @@
 .footer-copy{font:500 10px DM Mono,monospace;letter-spacing:.06em;color:#6b6b66;margin-top:28px!important}
 @media(max-width:900px){.footer-cta-grid{grid-template-columns:1fr;gap:50px}.footer-headline{max-width:none}.footer-assist{max-width:none}.footer-bar{flex-direction:column;align-items:flex-start;gap:28px}.footer-legal{justify-content:flex-start;gap:18px 24px}.footer-social{width:100%;justify-content:space-between}}
 @media(max-width:560px){.site-footer{padding:0 6vw 35px}.footer-cta{padding:15vw 0 12vw}.footer-nav{grid-template-columns:1fr;gap:18px}.footer-legal{flex-direction:column;align-items:flex-start;gap:14px}}
+
+/* Logo */
+.brand{mix-blend-mode:normal}
+.brand-logo{height:34px;width:auto;display:block;filter:brightness(0) invert(1)}
+.nav.nav-solid{mix-blend-mode:normal;color:#101010;background:rgba(244,243,239,.92);backdrop-filter:blur(14px);border-bottom:1px solid rgba(16,16,16,.08)}
+.nav.nav-solid .brand-logo{filter:none}
+.core-logo{width:88px;height:auto;display:block;margin-bottom:4px;opacity:.9}
+.footer-logo-img{height:42px;width:auto;display:block}

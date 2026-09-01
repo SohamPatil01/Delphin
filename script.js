@@ -1,5 +1,9 @@
 const progress=document.querySelector('.progress');
-window.addEventListener('scroll',()=>{const h=document.documentElement.scrollHeight-innerHeight;progress.style.width=(h?scrollY/h*100:0)+'%'},{passive:true});
+const nav=document.querySelector('.nav');
+const hero=document.querySelector('.hero');
+const syncNav=()=>{if(nav&&hero)nav.classList.toggle('nav-solid',scrollY>hero.offsetHeight-120)};
+window.addEventListener('scroll',()=>{const h=document.documentElement.scrollHeight-innerHeight;progress.style.width=(h?scrollY/h*100:0)+'%';syncNav()},{passive:true});
+syncNav();
 
 const observer=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')}),{threshold:.12});
 document.querySelectorAll('.hero-copy,.hero-visual').forEach(el=>observer.observe(el));

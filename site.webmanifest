@@ -1,0 +1,21 @@
+{
+  "name": "Delphin Inc.",
+  "short_name": "Delphin",
+  "description": "Aligning People, Processes and Systems.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f4f3ef",
+  "theme_color": "#f4f3ef",
+  "icons": [
+    {
+      "src": "images/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "images/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
