@@ -16,24 +16,54 @@ if (heroOpener) {
   if (reducedMotion) {
     showFinal();
   } else {
-    setTimeout(() => heroOpener.classList.add('is-enter'), 100);
-    setTimeout(() => heroOpener.classList.add('is-tagline'), 1200);
-    setTimeout(showFinal, 2000);
+    setTimeout(() => {
+      heroOpener.classList.add('is-enter');
+      nav?.classList.remove('nav-hidden');
+    }, 100);
+    setTimeout(() => {
+      heroOpener.classList.add('is-tagline');
+      document.querySelectorAll('.hero-lead.reveal').forEach(el => el.classList.add('visible'));
+    }, 900);
+    setTimeout(showFinal, 1600);
   }
 } else {
   document.body.classList.add('hero-ready');
   nav?.classList.remove('nav-hidden');
+  if (document.body.classList.contains('page-sub')) {
+    nav?.classList.add('nav-solid');
+  }
   document.querySelectorAll('.hero-lead.reveal').forEach(el => el.classList.add('visible'));
 }
 
 const progress = document.querySelector('.progress');
 const hero = document.querySelector('.hero');
+const menu = document.querySelector('.menu');
+const navPanel = document.getElementById('navPanel');
+const navOverlay = document.getElementById('navOverlay');
+
+const closeMenu = () => {
+  nav?.classList.remove('is-menu-open');
+  document.body.classList.remove('nav-menu-open');
+  menu?.setAttribute('aria-expanded', 'false');
+  menu?.setAttribute('aria-label', 'Open menu');
+  navOverlay?.setAttribute('aria-hidden', 'true');
+};
+
+const openMenu = () => {
+  nav?.classList.add('is-menu-open');
+  document.body.classList.add('nav-menu-open');
+  menu?.setAttribute('aria-expanded', 'true');
+  menu?.setAttribute('aria-label', 'Close menu');
+  navOverlay?.setAttribute('aria-hidden', 'false');
+};
+
 const syncNav = () => {
   if (nav && hero) nav.classList.toggle('nav-solid', scrollY > window.innerHeight * 0.6);
 };
 window.addEventListener('scroll', () => {
   const h = document.documentElement.scrollHeight - innerHeight;
   progress.style.width = (h ? scrollY / h * 100 : 0) + '%';
+  if (nav?.classList.contains('is-menu-open')) closeMenu();
   syncNav();
 }, { passive: true });
 syncNav();
@@ -44,33 +74,33 @@ const observer = new IntersectionObserver(
 );
 document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-document.querySelectorAll('.method-item').forEach(item => {
-  item.addEventListener('mouseenter', () => {
-    document.querySelectorAll('.method-item').forEach(x => x.classList.remove('active'));
-    item.classList.add('active');
+document.querySelectorAll('.cap-item').forEach(item => {
+  item.setAttribute('tabindex', '0');
+  const toggle = () => {
+    const isOpen = item.classList.contains('is-expanded');
+    document.querySelectorAll('.cap-item').forEach(x => x.classList.remove('is-expanded'));
+    if (!isOpen) item.classList.add('is-expanded');
+  };
+  item.addEventListener('click', () => {
+    if (window.matchMedia('(hover: none)').matches) toggle();
+  });
+  item.addEventListener('keydown', e => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      toggle();
+    }
   });
 });
-
-document.querySelectorAll('.cap-item').forEach(item => {
-  item.addEventListener('mouseenter', () => item.classList.add('is-highlighted'));
-  item.addEventListener('mouseleave', () => item.classList.remove('is-highlighted'));
-});
-
-const menu = document.querySelector('.menu');
-const navPanel = document.getElementById('navPanel');
-
-const closeMenu = () => {
-  nav?.classList.remove('is-menu-open');
-  menu?.setAttribute('aria-expanded', 'false');
-  menu?.setAttribute('aria-label', 'Open menu');
-};
 
 menu?.addEventListener('click', e => {
   e.preventDefault();
   e.stopPropagation();
-  const open = nav.classList.toggle('is-menu-open');
-  menu.setAttribute('aria-expanded', open ? 'true' : 'false');
-  menu.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+  if (nav?.classList.contains('is-menu-open')) closeMenu();
+  else openMenu();
+});
+
+navOverlay?.addEventListener('click', e => {
+  if (e.target === navOverlay) closeMenu();
 });
 
 navPanel?.querySelectorAll('a').forEach(link => {
