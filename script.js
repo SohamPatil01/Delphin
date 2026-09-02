@@ -6,7 +6,7 @@ if (heroOpener) {
   document.body.classList.add('intro-active');
 
   const showFinal = () => {
-    heroOpener.classList.add('is-enter', 'is-shifted', 'is-tagline');
+    heroOpener.classList.add('is-enter', 'is-tagline');
     document.body.classList.remove('intro-active');
     document.body.classList.add('hero-ready');
     document.querySelectorAll('.hero-lead.reveal').forEach(el => el.classList.add('visible'));
@@ -16,9 +16,8 @@ if (heroOpener) {
     showFinal();
   } else {
     setTimeout(() => heroOpener.classList.add('is-enter'), 100);
-    setTimeout(() => heroOpener.classList.add('is-shifted'), 900);
-    setTimeout(() => heroOpener.classList.add('is-tagline'), 1500);
-    setTimeout(showFinal, 2400);
+    setTimeout(() => heroOpener.classList.add('is-tagline'), 1200);
+    setTimeout(showFinal, 2000);
   }
 } else {
   document.body.classList.add('hero-ready');
@@ -56,20 +55,30 @@ document.querySelectorAll('.cap-item').forEach(item => {
 });
 
 const menu = document.querySelector('.menu');
+const navPanel = document.getElementById('navPanel');
+
+const closeMenu = () => {
+  nav?.classList.remove('is-menu-open');
+  menu?.setAttribute('aria-expanded', 'false');
+  menu?.setAttribute('aria-label', 'Open menu');
+};
+
 menu?.addEventListener('click', () => {
-  const navLinks = document.querySelector('.nav-links');
-  const open = navLinks.classList.toggle('open');
-  if (open) {
-    navLinks.style.cssText = 'display:flex;position:absolute;top:78px;left:6vw;right:6vw;flex-direction:column;gap:20px;padding:25px;background:#101010;color:#fff;mix-blend-mode:normal;border:1px solid #333';
-  } else navLinks.style.cssText = '';
+  const open = nav.classList.toggle('is-menu-open');
+  menu.setAttribute('aria-expanded', open ? 'true' : 'false');
+  menu.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+});
+
+navPanel?.querySelectorAll('a').forEach(link => {
+  link.addEventListener('click', closeMenu);
+});
+
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') closeMenu();
 });
 
 document.querySelectorAll('a[href^="#"]').forEach(a => a.addEventListener('click', () => {
-  const navLinks = document.querySelector('.nav-links');
-  if (navLinks?.classList.contains('open')) {
-    navLinks.classList.remove('open');
-    navLinks.style.cssText = '';
-  }
+  closeMenu();
 }));
 
 document.querySelectorAll('.work-card').forEach(card => {
@@ -82,4 +91,29 @@ document.querySelectorAll('.work-card').forEach(card => {
     visual.style.transform = `perspective(900px) rotateX(${(-y * 3).toFixed(2)}deg) rotateY(${(x * 4).toFixed(2)}deg)`;
   });
   card.addEventListener('mouseleave', () => visual.style.transform = '');
+});
+
+const contactForm = document.getElementById('contactForm');
+contactForm?.addEventListener('submit', e => {
+  e.preventDefault();
+  const form = e.target;
+  if (!form.checkValidity()) {
+    form.reportValidity();
+    return;
+  }
+  const data = new FormData(form);
+  const name = data.get('name');
+  const email = data.get('email');
+  const company = data.get('company');
+  const message = data.get('message');
+  const subject = encodeURIComponent(`Delphin inquiry from ${name}`);
+  const body = encodeURIComponent(
+    `Name: ${name}\nEmail: ${email}\nCompany: ${company || '—'}\n\n${message}`
+  );
+  window.location.href = `mailto:hello@delphininc.com?subject=${subject}&body=${body}`;
+  const note = document.getElementById('contactFormNote');
+  if (note) {
+    note.hidden = false;
+    note.textContent = 'Thanks — your email client should open to send the message.';
+  }
 });
