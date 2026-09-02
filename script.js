@@ -9,6 +9,7 @@ if (heroOpener) {
     heroOpener.classList.add('is-enter', 'is-tagline');
     document.body.classList.remove('intro-active');
     document.body.classList.add('hero-ready');
+    nav?.classList.remove('nav-hidden');
     document.querySelectorAll('.hero-lead.reveal').forEach(el => el.classList.add('visible'));
   };
 
@@ -21,6 +22,7 @@ if (heroOpener) {
   }
 } else {
   document.body.classList.add('hero-ready');
+  nav?.classList.remove('nav-hidden');
   document.querySelectorAll('.hero-lead.reveal').forEach(el => el.classList.add('visible'));
 }
 
@@ -63,7 +65,9 @@ const closeMenu = () => {
   menu?.setAttribute('aria-label', 'Open menu');
 };
 
-menu?.addEventListener('click', () => {
+menu?.addEventListener('click', e => {
+  e.preventDefault();
+  e.stopPropagation();
   const open = nav.classList.toggle('is-menu-open');
   menu.setAttribute('aria-expanded', open ? 'true' : 'false');
   menu.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
