@@ -128,26 +128,83 @@ document.querySelectorAll('.work-card').forEach(card => {
 });
 
 const contactForm = document.getElementById('contactForm');
-contactForm?.addEventListener('submit', e => {
+const contactFormWrap = document.getElementById('contactFormWrap');
+const contactSuccess = document.getElementById('contactSuccess');
+const contactNote = document.getElementById('contactFormNote');
+const contactSubmitBtn = document.getElementById('contactSubmitBtn');
+
+function setContactLoading(isLoading) {
+  if (!contactSubmitBtn) return;
+  contactSubmitBtn.disabled = isLoading;
+  contactSubmitBtn.classList.toggle('is-loading', isLoading);
+  contactSubmitBtn.setAttribute('aria-busy', isLoading ? 'true' : 'false');
+}
+
+function showContactError(message) {
+  if (!contactNote) return;
+  contactNote.hidden = false;
+  contactNote.textContent = message;
+  contactNote.classList.add('is-visible');
+}
+
+function showContactSuccess() {
+  if (!contactForm || !contactSuccess || !contactFormWrap) return;
+  contactForm.setAttribute('aria-hidden', 'true');
+  contactForm.classList.add('is-sent');
+  contactSuccess.hidden = false;
+  contactFormWrap.classList.add('is-success');
+  // Retrigger CSS animation
+  contactSuccess.classList.remove('is-animate');
+  void contactSuccess.offsetWidth;
+  contactSuccess.classList.add('is-animate');
+  contactSuccess.focus?.();
+}
+
+contactForm?.addEventListener('submit', async e => {
   e.preventDefault();
   const form = e.target;
   if (!form.checkValidity()) {
     form.reportValidity();
     return;
   }
+
+  if (contactNote) {
+    contactNote.hidden = true;
+    contactNote.textContent = '';
+    contactNote.classList.remove('is-visible');
+  }
+
   const data = new FormData(form);
-  const name = data.get('name');
-  const email = data.get('email');
-  const company = data.get('company');
-  const message = data.get('message');
-  const subject = encodeURIComponent(`Delphin inquiry from ${name}`);
-  const body = encodeURIComponent(
-    `Name: ${name}\nEmail: ${email}\nCompany: ${company || '—'}\n\n${message}`
-  );
-  window.location.href = `mailto:hello@delphininc.com?subject=${subject}&body=${body}`;
-  const note = document.getElementById('contactFormNote');
-  if (note) {
-    note.hidden = false;
-    note.textContent = 'Thanks — your email client should open to send the message.';
+  const payload = {
+    name: String(data.get('name') || '').trim(),
+    email: String(data.get('email') || '').trim(),
+    company: String(data.get('company') || '').trim(),
+    message: String(data.get('message') || '').trim(),
+    company_website: String(data.get('company_website') || '').trim(),
+  };
+
+  setContactLoading(true);
+
+  try {
+    const response = await fetch('/api/contact', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload),
+    });
+    const result = await response.json().catch(() => ({}));
+
+    if (!response.ok || !result.ok) {
+      throw new Error(result.error || 'Unable to send your message. Please try again.');
+    }
+
+    form.reset();
+    showContactSuccess();
+  } catch (err) {
+    showContactError(
+      err?.message ||
+        'Unable to send your message. Please email admin@delphin.in directly.'
+    );
+  } finally {
+    setContactLoading(false);
   }
 });

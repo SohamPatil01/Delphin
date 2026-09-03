@@ -74,8 +74,8 @@
             class="brand-logo"
             src="images/delphin-logo-transparent.png"
             alt="Delphin"
-            width="1024"
-            height="409"
+            width="766"
+            height="366"
           />
         </a>
       </div>
@@ -107,10 +107,10 @@
             </p>
             <p class="contact-page-email">
               Or email us directly at
-              <a href="mailto:hello@delphininc.com">hello@delphininc.com</a>
+              <a href="mailto:admin@delphin.in">admin@delphin.in</a>
             </p>
           </div>
-          <div class="contact-page-form-wrap">
+          <div class="contact-page-form-wrap" id="contactFormWrap">
             <form class="contact-form contact-form--page" id="contactForm" novalidate>
               <div class="contact-field">
                 <label for="contact-name">Name</label>
@@ -144,6 +144,16 @@
                   autocomplete="organization"
                 />
               </div>
+              <div class="contact-field contact-field--honeypot" aria-hidden="true">
+                <label for="contact-website">Website</label>
+                <input
+                  type="text"
+                  id="contact-website"
+                  name="company_website"
+                  tabindex="-1"
+                  autocomplete="off"
+                />
+              </div>
               <div class="contact-field">
                 <label for="contact-message">Message</label>
                 <textarea
@@ -153,13 +163,25 @@
                   required
                 ></textarea>
               </div>
-              <button type="submit" class="footer-contact-btn">
-                Let's talk <span aria-hidden="true">→</span>
+              <button type="submit" class="footer-contact-btn" id="contactSubmitBtn">
+                <span class="contact-btn-label">Let's talk</span>
+                <span class="contact-btn-arrow" aria-hidden="true">→</span>
+                <span class="contact-btn-spinner" aria-hidden="true"></span>
               </button>
-              <p class="contact-form-note" id="contactFormNote" hidden>
-                Thanks — your email client should open to send the message.
-              </p>
+              <p class="contact-form-note contact-form-note--error" id="contactFormNote" hidden></p>
             </form>
+            <div class="contact-success" id="contactSuccess" hidden tabindex="-1">
+              <div class="contact-success__mark" aria-hidden="true">
+                <svg viewBox="0 0 52 52" class="contact-success__svg">
+                  <circle class="contact-success__circle" cx="26" cy="26" r="24" fill="none" />
+                  <path class="contact-success__check" fill="none" d="M15 27l7 7 15-15" />
+                </svg>
+              </div>
+              <h2 class="contact-success__title">Message sent</h2>
+              <p class="contact-success__copy">
+                Thanks — we’ll get back to you shortly at the email you provided.
+              </p>
+            </div>
           </div>
         </div>
       </section>
@@ -172,8 +194,8 @@
             class="footer-logo-img"
             src="images/delphin-logo-transparent.png"
             alt="Delphin"
-            width="1024"
-            height="409"
+            width="766"
+            height="366"
           />
         </a>
         <nav class="footer-legal" aria-label="Legal">
@@ -185,7 +207,7 @@
         <div class="footer-social">
           <span class="footer-social-label">Follow us</span>
           <div class="footer-social-icons">
-            <a href="#" aria-label="LinkedIn"
+            <a href="https://www.linkedin.com/in/delphin-solutions/" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer"
               ><svg
                 viewBox="0 0 24 24"
                 width="18"
