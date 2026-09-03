@@ -8,7 +8,7 @@ A polished, responsive static website concept for Delphin Inc.
 - `script.js` — scroll progress, reveals, hover interactions, mobile navigation and project tilt
 
 ## Notes
-- Selected Work and Insights are intentionally marked as illustrative/demo content.
+- Selected Work includes K2 Chicken (systems), TJSB Sahakari Bank (credit risk & financial performance), and Sun Investments (capital markets & investment).
 - Team roles are provisional and should be updated with the actual responsibilities.
 - The contact email is `admin@delphin.in`.
 - Contact form submissions are emailed via Resend (`/api/contact`). Set `RESEND_API_KEY` in Vercel (see `.env.example`).

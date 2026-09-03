@@ -117,6 +117,7 @@ document.querySelectorAll('a[href^="#"]').forEach(a => a.addEventListener('click
 
 document.querySelectorAll('.work-card').forEach(card => {
   const visual = card.querySelector('.demo-window');
+  if (!visual) return;
   card.addEventListener('mousemove', e => {
     if (innerWidth < 900) return;
     const r = card.getBoundingClientRect();
