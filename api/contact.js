@@ -26,7 +26,18 @@ module.exports = async function handler(req, res) {
     return res.end();
   }
 
+  // Browsers hitting this URL directly use GET — respond clearly instead of a bare 405.
+  if (req.method === 'GET' || req.method === 'HEAD') {
+    res.setHeader('Allow', 'POST, OPTIONS');
+    return json(res, 200, {
+      ok: true,
+      service: 'Delphin contact API',
+      usage: 'Send a POST request with JSON: name, email, message (company optional).',
+    });
+  }
+
   if (req.method !== 'POST') {
+    res.setHeader('Allow', 'POST, OPTIONS');
     return json(res, 405, { error: 'Method not allowed' });
   }
 

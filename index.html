@@ -171,357 +171,176 @@
 
       <section
         id="method"
-        class="method-journey section-light"
+        class="delphin-method section-light"
         aria-label="How we work"
       >
-        <div
-          class="method-journey__placeholder"
-          id="methodPlaceholder"
-          aria-hidden="true"
-        ></div>
-        <div class="method-journey__pin" id="methodJourneyPin">
-          <div class="method-journey__grid">
-            <aside class="method-journey__aside">
-              <p class="method-journey__index kicker">03 / How we work</p>
-              <h2 class="method-journey__title">
-                From complexity<br />to <em>clarity.</em>
-              </h2>
-              <p class="method-journey__lead">
-                We don't begin with a solution. We begin by understanding how
-                the business actually works.
-              </p>
-              <ol
-                class="method-steps-nav"
-                id="methodStepsNav"
-                aria-label="Method stages"
+        <div class="dm-wrap">
+          <header class="dm-head">
+            <p class="dm-eyebrow">How we work</p>
+            <h2 class="dm-title">The Delphin Method</h2>
+            <p class="dm-mantra">
+              Understand.<br />
+              Structure.<br />
+              <span>Improve.</span>
+            </p>
+          </header>
+
+          <div
+            class="dm-accordion"
+            id="dmAccordion"
+            role="list"
+            aria-label="The Delphin Method stages"
+          >
+            <div class="dm-row" role="listitem" data-stage="0">
+              <button
+                class="dm-row__trigger"
+                type="button"
+                aria-expanded="false"
+                aria-controls="dm-panel-0"
+                id="dm-trigger-0"
               >
-                <li class="method-steps-nav__item is-active" data-stage="0">
-                  <span class="method-steps-nav__num">01</span>
-                  <div class="method-steps-nav__body">
-                    <span class="method-steps-nav__title">Understand</span>
-                    <p class="method-steps-nav__copy">
-                      We study the business, its people, processes, economics
-                      and existing systems.
-                    </p>
-                  </div>
-                </li>
-                <li class="method-steps-nav__item" data-stage="1">
-                  <span class="method-steps-nav__num">02</span>
-                  <div class="method-steps-nav__body">
-                    <span class="method-steps-nav__title">Diagnose</span>
-                    <p class="method-steps-nav__copy">
-                      We identify bottlenecks, inefficiencies, risks and
-                      opportunities.
-                    </p>
-                  </div>
-                </li>
-                <li class="method-steps-nav__item" data-stage="2">
-                  <span class="method-steps-nav__num">03</span>
-                  <div class="method-steps-nav__body">
-                    <span class="method-steps-nav__title">Structure</span>
-                    <p class="method-steps-nav__copy">
-                      We design better processes, financial structures,
-                      technology and workflows.
-                    </p>
-                  </div>
-                </li>
-                <li class="method-steps-nav__item" data-stage="3">
-                  <span class="method-steps-nav__num">04</span>
-                  <div class="method-steps-nav__body">
-                    <span class="method-steps-nav__title">Implement</span>
-                    <p class="method-steps-nav__copy">
-                      We turn recommendations into systems that teams can
-                      actually use.
-                    </p>
-                  </div>
-                </li>
-                <li class="method-steps-nav__item" data-stage="4">
-                  <span class="method-steps-nav__num">05</span>
-                  <div class="method-steps-nav__body">
-                    <span class="method-steps-nav__title">Optimize</span>
-                    <p class="method-steps-nav__copy">
-                      We measure performance and continuously improve what has
-                      been built.
-                    </p>
-                  </div>
-                </li>
-              </ol>
-            </aside>
+                <span class="dm-row__num">01</span>
+                <span class="dm-row__title">Understand</span>
+                <span class="dm-row__arrow" aria-hidden="true">↗</span>
+              </button>
+              <div
+                class="dm-row__panel"
+                id="dm-panel-0"
+                role="region"
+                aria-labelledby="dm-trigger-0"
+              >
+                <div class="dm-row__panel-inner">
+                  <p class="dm-row__desc">
+                    We study the business, its people, processes, economics and
+                    existing systems.
+                  </p>
+                  <p class="dm-row__tags">
+                    People · Processes · Finance · Systems
+                  </p>
+                </div>
+              </div>
+            </div>
 
-            <div class="method-journey__main">
-              <div class="method-journey__visual" id="methodVisual">
-                <svg
-                  class="method-network"
-                  id="methodNetwork"
-                  viewBox="0 0 480 380"
-                  preserveAspectRatio="xMidYMid meet"
-                  role="img"
-                  aria-label="Business system visualization evolving from complexity to clarity"
-                >
-                  <g
-                    class="network-lines network-lines--chaos"
-                    id="networkLinesChaos"
-                  ></g>
-                  <g
-                    class="network-lines network-lines--grid"
-                    id="networkLinesGrid"
-                  ></g>
-                  <g class="network-markers" id="networkMarkers"></g>
-                  <g class="network-particles" id="networkParticles"></g>
-                  <g class="network-nodes" id="networkNodes"></g>
-                  <g class="network-clarity" id="networkClarity">
-                    <circle
-                      class="clarity-ring clarity-ring--outer"
-                      cx="240"
-                      cy="168"
-                      r="104"
-                    />
-                    <circle
-                      class="clarity-ring clarity-ring--inner"
-                      cx="240"
-                      cy="168"
-                      r="68"
-                    />
-                    <line
-                      class="clarity-axis"
-                      x1="240"
-                      y1="150"
-                      x2="240"
-                      y2="88"
-                    />
-                    <line
-                      class="clarity-axis"
-                      x1="222"
-                      y1="168"
-                      x2="160"
-                      y2="168"
-                    />
-                    <line
-                      class="clarity-axis"
-                      x1="258"
-                      y1="168"
-                      x2="320"
-                      y2="168"
-                    />
-                    <line
-                      class="clarity-axis"
-                      x1="240"
-                      y1="186"
-                      x2="240"
-                      y2="248"
-                    />
+            <div class="dm-row" role="listitem" data-stage="1">
+              <button
+                class="dm-row__trigger"
+                type="button"
+                aria-expanded="false"
+                aria-controls="dm-panel-1"
+                id="dm-trigger-1"
+              >
+                <span class="dm-row__num">02</span>
+                <span class="dm-row__title">Diagnose</span>
+                <span class="dm-row__arrow" aria-hidden="true">↗</span>
+              </button>
+              <div
+                class="dm-row__panel"
+                id="dm-panel-1"
+                role="region"
+                aria-labelledby="dm-trigger-1"
+              >
+                <div class="dm-row__panel-inner">
+                  <p class="dm-row__desc">
+                    We identify bottlenecks, inefficiencies, risks and
+                    opportunities.
+                  </p>
+                  <p class="dm-row__tags">
+                    Risks · Bottlenecks · Opportunities · Performance
+                  </p>
+                </div>
+              </div>
+            </div>
 
-                    <circle class="clarity-dot" cx="240" cy="100" r="3.5" />
-                    <circle class="clarity-dot" cx="172" cy="168" r="3.5" />
-                    <circle class="clarity-dot" cx="308" cy="168" r="3.5" />
-                    <circle class="clarity-dot" cx="240" cy="236" r="3.5" />
+            <div class="dm-row" role="listitem" data-stage="2">
+              <button
+                class="dm-row__trigger"
+                type="button"
+                aria-expanded="false"
+                aria-controls="dm-panel-2"
+                id="dm-trigger-2"
+              >
+                <span class="dm-row__num">03</span>
+                <span class="dm-row__title">Structure</span>
+                <span class="dm-row__arrow" aria-hidden="true">↗</span>
+              </button>
+              <div
+                class="dm-row__panel"
+                id="dm-panel-2"
+                role="region"
+                aria-labelledby="dm-trigger-2"
+              >
+                <div class="dm-row__panel-inner">
+                  <p class="dm-row__desc">
+                    We design better processes, financial structures, technology
+                    and workflows.
+                  </p>
+                  <p class="dm-row__tags">
+                    Finance · Technology · Operations · Workflows
+                  </p>
+                </div>
+              </div>
+            </div>
 
-                    <text
-                      class="clarity-hub"
-                      x="240"
-                      y="168"
-                      text-anchor="middle"
-                    >
-                      DELPHIN
-                    </text>
+            <div class="dm-row" role="listitem" data-stage="3">
+              <button
+                class="dm-row__trigger"
+                type="button"
+                aria-expanded="false"
+                aria-controls="dm-panel-3"
+                id="dm-trigger-3"
+              >
+                <span class="dm-row__num">04</span>
+                <span class="dm-row__title">Implement</span>
+                <span class="dm-row__arrow" aria-hidden="true">↗</span>
+              </button>
+              <div
+                class="dm-row__panel"
+                id="dm-panel-3"
+                role="region"
+                aria-labelledby="dm-trigger-3"
+              >
+                <div class="dm-row__panel-inner">
+                  <p class="dm-row__desc">
+                    We turn recommendations into systems that teams can actually
+                    use.
+                  </p>
+                  <p class="dm-row__tags">
+                    Systems · Automation · Execution · Operations
+                  </p>
+                </div>
+              </div>
+            </div>
 
-                    <!-- PEOPLE — top -->
-                    <g class="clarity-node" transform="translate(240, 64)">
-                      <circle class="clarity-node__ring" r="24" />
-                      <g
-                        class="clarity-node__icon"
-                        transform="translate(0, -1)"
-                      >
-                        <circle cx="-5" cy="-3" r="3" fill="none" />
-                        <circle cx="5" cy="-3" r="3" fill="none" />
-                        <path
-                          d="M-10 9 C-10 4 -5 2 0 2 C5 2 10 4 10 9"
-                          fill="none"
-                        />
-                      </g>
-                      <text
-                        class="clarity-node__label"
-                        y="40"
-                        text-anchor="middle"
-                      >
-                        PEOPLE
-                      </text>
-                    </g>
-
-                    <!-- PROCESSES — left -->
-                    <g class="clarity-node" transform="translate(136, 168)">
-                      <circle class="clarity-node__ring" r="24" />
-                      <g class="clarity-node__icon">
-                        <circle cx="0" cy="0" r="7" />
-                        <line x1="0" y1="-11" x2="0" y2="-8" />
-                        <line x1="0" y1="11" x2="0" y2="8" />
-                        <line x1="-11" y1="0" x2="-8" y2="0" />
-                        <line x1="11" y1="0" x2="8" y2="0" />
-                        <line x1="-7.8" y1="-7.8" x2="-5.7" y2="-5.7" />
-                        <line x1="7.8" y1="-7.8" x2="5.7" y2="-5.7" />
-                        <line x1="-7.8" y1="7.8" x2="-5.7" y2="5.7" />
-                        <line x1="7.8" y1="7.8" x2="5.7" y2="5.7" />
-                      </g>
-                      <text
-                        class="clarity-node__label"
-                        y="40"
-                        text-anchor="middle"
-                      >
-                        PROCESSES
-                      </text>
-                    </g>
-
-                    <!-- SYSTEMS — right -->
-                    <g class="clarity-node" transform="translate(344, 168)">
-                      <circle class="clarity-node__ring" r="24" />
-                      <g class="clarity-node__icon" transform="translate(0, 1)">
-                        <path d="M-8 4 L0 -6 L8 4 Z" fill="none" />
-                        <path d="M-8 4 L-8 10 L8 10 L8 4" fill="none" />
-                        <line x1="-8" y1="7" x2="8" y2="7" />
-                      </g>
-                      <text
-                        class="clarity-node__label"
-                        y="40"
-                        text-anchor="middle"
-                      >
-                        SYSTEMS
-                      </text>
-                    </g>
-
-                    <!-- BUSINESS PERFORMANCE — bottom -->
-                    <g class="clarity-node" transform="translate(240, 272)">
-                      <circle class="clarity-node__ring" r="24" />
-                      <g class="clarity-node__icon" transform="translate(0, 2)">
-                        <line x1="-10" y1="8" x2="-10" y2="-2" />
-                        <line x1="-3" y1="8" x2="-3" y2="-6" />
-                        <line x1="4" y1="8" x2="4" y2="0" />
-                        <line x1="11" y1="8" x2="11" y2="-4" />
-                        <line x1="-13" y1="8" x2="13" y2="8" />
-                      </g>
-                      <text
-                        class="clarity-node__label clarity-node__label--wide"
-                        text-anchor="middle"
-                      >
-                        <tspan x="0" dy="36">BUSINESS</tspan>
-                        <tspan x="0" dy="11">PERFORMANCE</tspan>
-                      </text>
-                    </g>
-                  </g>
-                  <g class="network-payoff" id="networkPayoff">
-                    <text
-                      class="payoff-label"
-                      x="240"
-                      y="338"
-                      text-anchor="middle"
-                    >
-                      FROM COMPLEXITY
-                    </text>
-                    <text
-                      class="payoff-label payoff-label--accent"
-                      x="240"
-                      y="364"
-                      text-anchor="middle"
-                    >
-                      <tspan class="payoff-label__to">TO</tspan>
-                      <tspan class="payoff-label__clarity">CLARITY.</tspan>
-                    </text>
-                  </g>
-                </svg>
+            <div class="dm-row" role="listitem" data-stage="4">
+              <button
+                class="dm-row__trigger"
+                type="button"
+                aria-expanded="false"
+                aria-controls="dm-panel-4"
+                id="dm-trigger-4"
+              >
+                <span class="dm-row__num">05</span>
+                <span class="dm-row__title">Optimize</span>
+                <span class="dm-row__arrow" aria-hidden="true">↗</span>
+              </button>
+              <div
+                class="dm-row__panel"
+                id="dm-panel-4"
+                role="region"
+                aria-labelledby="dm-trigger-4"
+              >
+                <div class="dm-row__panel-inner">
+                  <p class="dm-row__desc">
+                    We measure performance and continuously improve what has
+                    been built.
+                  </p>
+                  <p class="dm-row__tags">
+                    Measure · Improve · Performance · Continuous Improvement
+                  </p>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-
-        <!-- Mobile: vertical storytelling -->
-        <div class="method-journey__mobile" id="methodMobile">
-          <header class="method-journey__mobile-head">
-            <p class="kicker">03 / How we work</p>
-            <h2>From complexity<br />to <em>clarity.</em></h2>
-            <p class="method-journey__lead">
-              We don't begin with a solution. We begin by understanding how the
-              business actually works.
-            </p>
-          </header>
-          <ol
-            class="method-steps-nav method-steps-nav--mobile"
-            aria-label="Method stages"
-          >
-            <li class="method-steps-nav__item is-active" data-stage="0">
-              <span class="method-steps-nav__num">01</span>
-              <div class="method-steps-nav__body">
-                <span class="method-steps-nav__title">Understand</span>
-                <p class="method-steps-nav__copy">
-                  We study the business, its people, processes, economics and
-                  existing systems.
-                </p>
-              </div>
-              <div
-                class="method-journey__mobile-visual"
-                data-stage="0"
-                aria-hidden="true"
-              ></div>
-            </li>
-            <li class="method-steps-nav__item" data-stage="1">
-              <span class="method-steps-nav__num">02</span>
-              <div class="method-steps-nav__body">
-                <span class="method-steps-nav__title">Diagnose</span>
-                <p class="method-steps-nav__copy">
-                  We identify bottlenecks, inefficiencies, risks and
-                  opportunities.
-                </p>
-              </div>
-              <div
-                class="method-journey__mobile-visual"
-                data-stage="1"
-                aria-hidden="true"
-              ></div>
-            </li>
-            <li class="method-steps-nav__item" data-stage="2">
-              <span class="method-steps-nav__num">03</span>
-              <div class="method-steps-nav__body">
-                <span class="method-steps-nav__title">Structure</span>
-                <p class="method-steps-nav__copy">
-                  We design better processes, financial structures, technology
-                  and workflows.
-                </p>
-              </div>
-              <div
-                class="method-journey__mobile-visual"
-                data-stage="2"
-                aria-hidden="true"
-              ></div>
-            </li>
-            <li class="method-steps-nav__item" data-stage="3">
-              <span class="method-steps-nav__num">04</span>
-              <div class="method-steps-nav__body">
-                <span class="method-steps-nav__title">Implement</span>
-                <p class="method-steps-nav__copy">
-                  We turn recommendations into systems that teams can actually
-                  use.
-                </p>
-              </div>
-              <div
-                class="method-journey__mobile-visual"
-                data-stage="3"
-                aria-hidden="true"
-              ></div>
-            </li>
-            <li class="method-steps-nav__item" data-stage="4">
-              <span class="method-steps-nav__num">05</span>
-              <div class="method-steps-nav__body">
-                <span class="method-steps-nav__title">Optimize</span>
-                <p class="method-steps-nav__copy">
-                  We measure performance and continuously improve what has been
-                  built.
-                </p>
-              </div>
-              <div
-                class="method-journey__mobile-visual"
-                data-stage="4"
-                aria-hidden="true"
-              ></div>
-            </li>
-          </ol>
         </div>
       </section>
 
@@ -971,7 +790,7 @@
           <span class="footer-social-label">Follow us</span>
           <div class="footer-social-icons">
             <a
-              href="https://www.linkedin.com/in/delphin-solutions/"
+              href="https://www.linkedin.com/company/delphin-solutions"
               aria-label="LinkedIn"
               target="_blank"
               rel="noopener noreferrer"
