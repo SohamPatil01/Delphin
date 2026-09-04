@@ -74,24 +74,6 @@ const observer = new IntersectionObserver(
 );
 document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-document.querySelectorAll('.cap-item').forEach(item => {
-  item.setAttribute('tabindex', '0');
-  const toggle = () => {
-    const isOpen = item.classList.contains('is-expanded');
-    document.querySelectorAll('.cap-item').forEach(x => x.classList.remove('is-expanded'));
-    if (!isOpen) item.classList.add('is-expanded');
-  };
-  item.addEventListener('click', () => {
-    if (window.matchMedia('(hover: none)').matches) toggle();
-  });
-  item.addEventListener('keydown', e => {
-    if (e.key === 'Enter' || e.key === ' ') {
-      e.preventDefault();
-      toggle();
-    }
-  });
-});
-
 menu?.addEventListener('click', e => {
   e.preventDefault();
   e.stopPropagation();

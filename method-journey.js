@@ -1,116 +1,151 @@
 /**
- * Delphin Method — interactive horizontal accordion.
- * Desktop: hover expands one row; click also works.
- * Touch / coarse pointer: tap toggles one open row.
+ * ALIGN Framework™ — 2×3 flip-card matrix
+ * Desktop: brief hover threshold → flip; leave → return
+ * Touch: tap to flip / tap again to return (one at a time)
+ * Keyboard: Enter / Space toggles; Escape closes
  */
 (function () {
   const section = document.getElementById('method');
-  const accordion = document.getElementById('dmAccordion');
-  if (!section || !accordion || !section.classList.contains('delphin-method')) return;
+  if (!section || !section.classList.contains('align-framework')) return;
 
-  const rows = Array.from(accordion.querySelectorAll('.dm-row'));
-  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  const finePointer = window.matchMedia('(hover: hover) and (pointer: fine)');
+  const wrap = section.querySelector('.af-wrap');
+  const matrix = document.getElementById('afCards');
+  if (!wrap || !matrix) return;
 
-  let openIndex = -1;
-  let hoverIndex = -1;
+  const cards = Array.from(matrix.querySelectorAll('.af-card'));
+  const fineHover = window.matchMedia('(hover: hover) and (pointer: fine)');
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+  const HOVER_DELAY = 140;
+  const READY_LEAD = 90;
 
-  function setOpen(index, { fromClick } = {}) {
-    if (index === openIndex && fromClick) {
-      // Toggle closed on second click / tap
-      openIndex = -1;
-    } else if (index >= 0) {
-      openIndex = index;
-    } else {
-      openIndex = -1;
+  let hoverTimer = null;
+  let readyTimer = null;
+  let activeCard = null;
+  let flipSource = null; // 'hover' | 'manual'
+
+  function syncReduced() {
+    wrap.classList.toggle('is-reduced', reducedMotion.matches);
+  }
+
+  function setNeighbors(card, on) {
+    cards.forEach((c) => c.classList.remove('is-neighbor'));
+    if (!on || !card) return;
+    const raw = card.getAttribute('data-neighbors') || '';
+    raw.split(',').forEach((id) => {
+      const n = cards.find((c) => c.dataset.stage === id.trim());
+      if (n) n.classList.add('is-neighbor');
+    });
+  }
+
+  function setFlipped(card, open, source) {
+    const btn = card.querySelector('.af-card__btn');
+    const back = card.querySelector('.af-card__face--back');
+    if (!btn || !back) return;
+
+    if (open && activeCard && activeCard !== card) {
+      setFlipped(activeCard, false);
     }
 
-    rows.forEach((row, i) => {
-      const open = i === openIndex;
-      row.classList.toggle('is-open', open);
-      const btn = row.querySelector('.dm-row__trigger');
-      if (btn) btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    card.classList.toggle('is-flipped', open);
+    card.classList.toggle('is-ready', open);
+    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    back.setAttribute('aria-hidden', open ? 'false' : 'true');
+
+    if (open) {
+      activeCard = card;
+      flipSource = source || 'manual';
+      setNeighbors(card, true);
+    } else {
+      if (activeCard === card) {
+        activeCard = null;
+        flipSource = null;
+      }
+      card.classList.remove('is-ready');
+      setNeighbors(null, false);
+    }
+  }
+
+  function closeAll() {
+    cards.forEach((card) => {
+      card.classList.remove('is-flipped', 'is-ready', 'is-neighbor');
+      const btn = card.querySelector('.af-card__btn');
+      const back = card.querySelector('.af-card__face--back');
+      if (btn) btn.setAttribute('aria-expanded', 'false');
+      if (back) back.setAttribute('aria-hidden', 'true');
     });
+    activeCard = null;
+    flipSource = null;
   }
 
-  function setHover(index) {
-    if (!finePointer.matches) return;
-    hoverIndex = index;
-    rows.forEach((row, i) => {
-      row.classList.toggle('is-hover', i === hoverIndex);
-    });
+  function clearTimers() {
+    if (hoverTimer) {
+      window.clearTimeout(hoverTimer);
+      hoverTimer = null;
+    }
+    if (readyTimer) {
+      window.clearTimeout(readyTimer);
+      readyTimer = null;
+    }
   }
 
-  function clearHover() {
-    hoverIndex = -1;
-    rows.forEach((row) => row.classList.remove('is-hover'));
+  function armHover(card) {
+    clearTimers();
+    readyTimer = window.setTimeout(() => {
+      if (!card.classList.contains('is-flipped')) card.classList.add('is-ready');
+    }, READY_LEAD);
+    hoverTimer = window.setTimeout(() => {
+      setFlipped(card, true, 'hover');
+    }, HOVER_DELAY);
   }
 
-  rows.forEach((row, i) => {
-    const btn = row.querySelector('.dm-row__trigger');
+  function disarmHover(card) {
+    clearTimers();
+    if (activeCard === card && flipSource === 'hover') {
+      setFlipped(card, false);
+    } else if (!card.classList.contains('is-flipped')) {
+      card.classList.remove('is-ready');
+    }
+  }
+
+  cards.forEach((card) => {
+    const btn = card.querySelector('.af-card__btn');
     if (!btn) return;
 
-    row.addEventListener('mouseenter', () => setHover(i));
-    row.addEventListener('mouseleave', () => {
-      if (hoverIndex === i) {
-        // leave handling is on accordion mouseleave
-      }
+    card.addEventListener('mouseenter', () => {
+      if (!fineHover.matches) return;
+      armHover(card);
+    });
+
+    card.addEventListener('mouseleave', () => {
+      if (!fineHover.matches) return;
+      disarmHover(card);
     });
 
     btn.addEventListener('click', (e) => {
-      e.preventDefault();
-      setOpen(i, { fromClick: true });
-      if (finePointer.matches) setHover(i);
+      if (fineHover.matches) {
+        e.preventDefault();
+        return;
+      }
+      const willOpen = !card.classList.contains('is-flipped');
+      setFlipped(card, willOpen, 'manual');
     });
 
     btn.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') {
-        setOpen(-1);
-        clearHover();
-        btn.blur();
-      }
-      if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
-        e.preventDefault();
-        const next = e.key === 'ArrowDown'
-          ? (i + 1) % rows.length
-          : (i - 1 + rows.length) % rows.length;
-        const nextBtn = rows[next].querySelector('.dm-row__trigger');
-        nextBtn?.focus();
-        if (finePointer.matches) setHover(next);
-      }
+      if (e.key !== 'Enter' && e.key !== ' ') return;
+      e.preventDefault();
+      const willOpen = !card.classList.contains('is-flipped');
+      setFlipped(card, willOpen, 'manual');
     });
   });
 
-  accordion.addEventListener('mouseleave', () => {
-    if (!finePointer.matches) return;
-    clearHover();
-    openIndex = -1;
-    rows.forEach((row) => {
-      row.classList.remove('is-open');
-      const btn = row.querySelector('.dm-row__trigger');
-      if (btn) btn.setAttribute('aria-expanded', 'false');
-    });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeAll();
   });
 
-  // Section enter reveal
-  if ('IntersectionObserver' in window) {
-    const io = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            section.classList.add('is-inview');
-            io.disconnect();
-          }
-        });
-      },
-      { threshold: 0.18 }
-    );
-    io.observe(section);
-  } else {
-    section.classList.add('is-inview');
-  }
-
-  if (reducedMotion) {
-    section.classList.add('is-inview');
-  }
+  fineHover.addEventListener('change', () => {
+    clearTimers();
+    closeAll();
+  });
+  reducedMotion.addEventListener('change', syncReduced);
+  syncReduced();
 })();

@@ -18,7 +18,7 @@
           io.unobserve(entry.target);
         });
       },
-      { threshold: 0.28 }
+      { threshold: 0.12, rootMargin: '0px 0px -8% 0px' }
     );
     nodes.forEach(n => io.observe(n));
   };
@@ -30,6 +30,11 @@
   observeInView('.case-chart-block');
   observeInView('.case-pillars');
   observeInView('.case-table-wrap');
+
+  // Fallback: ensure chart bars become visible even if IO misses
+  window.setTimeout(() => {
+    document.querySelectorAll('.case-chart-block').forEach(n => n.classList.add('is-inview'));
+  }, 1800);
 
   const modules = [...document.querySelectorAll('.case-module')];
   modules.forEach(details => {
@@ -93,17 +98,21 @@
     if (!config) return;
     const max = Math.max(...config.points.map(p => p.value));
     const min = Math.min(...config.points.map(p => p.value));
-    const span = Math.max(max - min, max * 0.08);
+    // Keep relative differences readable without collapsing the shortest bar.
+    const floor = Math.max(min - (max - min) * 0.35, 0);
+    const span = Math.max(max - floor, max * 0.12);
 
     el.innerHTML = `
-      <div class="case-chart__bars">
+      <div class="case-chart__bars" style="--cols:${config.points.length}">
         ${config.points
           .map((p, i) => {
-            const height = ((p.value - min + span * 0.15) / (span * 1.15)) * 100;
+            const pct = Math.max(((p.value - floor) / span) * 100, 14);
             return `
               <div class="case-chart__col" style="--delay:${i * 0.08}s">
                 <span class="case-chart__value">${config.format(p.value)}</span>
-                <span class="case-chart__bar" style="--h:${height.toFixed(2)}%"></span>
+                <div class="case-chart__track" aria-hidden="true">
+                  <span class="case-chart__bar" style="height:${pct.toFixed(1)}%"></span>
+                </div>
                 <span class="case-chart__label">${p.label}</span>
               </div>
             `;
