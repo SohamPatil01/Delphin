@@ -84,7 +84,6 @@
   </head>
   <body>
     <div class="noise"></div>
-    <div class="progress"></div>
 
     <header class="nav nav-hidden" id="siteNav">
       <div class="nav-pill nav-pill-left">
@@ -176,540 +175,292 @@
       >
         <div class="af-wrap">
           <header class="af-head reveal">
-            <div class="af-head__main">
+            <div class="af-head__copy">
               <p class="af-eyebrow">04 / The ALIGN Framework™</p>
               <h2 class="af-title">The ALIGN Framework™</h2>
               <p class="af-mantra">Aligning People. Processes. Systems.</p>
               <p class="af-lead">
-                Businesses rarely have isolated problems. People, processes and
-                systems fall out of alignment. Delphin finds that misalignment,
-                fixes it, and builds a business that works better as a whole.
+                Businesses rarely have isolated problems. Delphin finds
+                misalignment across people, processes and systems — then builds a
+                business that works better as a whole.
               </p>
             </div>
-            <p class="af-aside" aria-hidden="true">
-              A connected approach<br />to a stronger tomorrow.
-            </p>
+            <p class="af-head__aside">A connected approach to a stronger tomorrow.</p>
           </header>
 
-          <div class="af-matrix" id="afCards">
-            <svg
-              class="af-matrix__links"
-              viewBox="0 0 100 100"
-              preserveAspectRatio="none"
-              aria-hidden="true"
-            >
-              <path class="af-matrix__path" d="M8.3 50 H91.7" />
-              <circle class="af-matrix__dot" cx="8.3" cy="50" r="0.7" />
-              <circle class="af-matrix__dot" cx="25" cy="50" r="0.7" />
-              <circle class="af-matrix__dot" cx="41.7" cy="50" r="0.7" />
-              <circle class="af-matrix__dot" cx="58.3" cy="50" r="0.7" />
-              <circle class="af-matrix__dot" cx="75" cy="50" r="0.7" />
-              <circle class="af-matrix__dot" cx="91.7" cy="50" r="0.7" />
-            </svg>
+          <p class="af-hint reveal" data-hint-hover="Hover to flip" data-hint-tap="Tap to flip" aria-hidden="true">Hover to flip</p>
 
-            <div
-              class="af-cards"
-              role="list"
-              aria-label="ALIGN Framework stages"
-            >
-              <!-- 01 Assess -->
-              <article
-                class="af-card"
-                role="listitem"
-                data-stage="0"
-                data-neighbors="1"
+          <div
+            class="af-grid"
+            id="afGrid"
+            role="list"
+            aria-label="ALIGN Framework stages"
+          >
+            <article class="af-flip" role="listitem" data-stage="0">
+              <button
+                class="af-flip__btn"
+                type="button"
+                aria-expanded="false"
+                aria-label="Assess. Understand before we advise. Flip for details."
               >
-                <button
-                  class="af-card__btn"
-                  type="button"
-                  id="af-card-0"
-                  aria-expanded="false"
-                  aria-controls="af-back-0"
-                >
-                  <span class="af-card__inner">
-                    <span class="af-card__face af-card__face--front">
-                      <span class="af-card__top">
-                        <span class="af-card__index">01</span>
-                        <svg
-                          class="af-card__icon"
-                          viewBox="0 0 32 32"
-                          aria-hidden="true"
-                        >
-                          <circle
-                            class="af-ico-a af-ico-a--1"
-                            cx="12"
-                            cy="13"
-                            r="6.2"
-                          />
-                          <circle
-                            class="af-ico-a af-ico-a--2"
-                            cx="20"
-                            cy="13"
-                            r="6.2"
-                          />
-                          <circle
-                            class="af-ico-a af-ico-a--3"
-                            cx="16"
-                            cy="20"
-                            r="6.2"
-                          />
+                <span class="af-flip__inner">
+                  <span class="af-face af-face--front">
+                    <span class="af-face__top">
+                      <span class="af-face__num">01</span>
+                      <span class="af-face__icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none">
+                          <circle cx="9" cy="10" r="5" />
+                          <circle cx="15" cy="10" r="5" />
+                          <circle cx="12" cy="15" r="5" />
                         </svg>
                       </span>
-                      <span class="af-card__letter" aria-hidden="true">A</span>
-                      <span class="af-card__title">Assess</span>
-                      <span class="af-card__rule" aria-hidden="true"></span>
-                      <span class="af-card__sub"
-                        >Understand before we advise.</span
-                      >
-                      <span class="af-card__arrow" aria-hidden="true">↗</span>
                     </span>
-                    <span
-                      class="af-card__face af-card__face--back"
-                      id="af-back-0"
-                      aria-hidden="true"
-                    >
-                      <span class="af-card__back-top">
-                        <span class="af-card__back-index">01 / A</span>
-                        <span class="af-card__back-title">Assess</span>
-                      </span>
-                      <span
-                        class="af-card__back-rule"
-                        aria-hidden="true"
-                      ></span>
-                      <span class="af-card__back-kicker"
-                        >Understand before we advise.</span
-                      >
-                      <span class="af-card__back-copy">
-                        <span
-                          >We immerse ourselves in your business to understand
-                          how it actually works—not just how it is supposed to
-                          work.</span
-                        >
-                        <span
-                          >We study your objectives, people, processes, systems,
-                          customers and current challenges to establish the real
-                          business context.</span
-                        >
-                      </span>
-                      <span class="af-card__back-next">Assess → Locate</span>
-                    </span>
+                    <span class="af-face__letter" aria-hidden="true">A</span>
+                    <span class="af-face__name">Assess</span>
+                    <span class="af-face__desc">Understand before we advise.</span>
+                    <span class="af-face__arrow" aria-hidden="true">→</span>
                   </span>
-                </button>
-              </article>
+                  <span class="af-face af-face--back">
+                    <span class="af-face__meta">01 / A</span>
+                    <span class="af-face__name">Assess</span>
+                    <span class="af-face__copy"
+                      >We study how the business actually works before recommending
+                      change.</span
+                    >
+                    <span class="af-face__label">Key focus</span>
+                    <ul class="af-face__list">
+                      <li>Business diagnostics</li>
+                      <li>People, process &amp; systems review</li>
+                      <li>Challenge framing</li>
+                    </ul>
+                  </span>
+                </span>
+              </button>
+            </article>
 
-              <!-- 02 Locate -->
-              <article
-                class="af-card"
-                role="listitem"
-                data-stage="1"
-                data-neighbors="0,2"
+            <article class="af-flip" role="listitem" data-stage="1">
+              <button
+                class="af-flip__btn"
+                type="button"
+                aria-expanded="false"
+                aria-label="Locate. Find where the business is losing momentum. Flip for details."
               >
-                <button
-                  class="af-card__btn"
-                  type="button"
-                  id="af-card-1"
-                  aria-expanded="false"
-                  aria-controls="af-back-1"
-                >
-                  <span class="af-card__inner">
-                    <span class="af-card__face af-card__face--front">
-                      <span class="af-card__top">
-                        <span class="af-card__index">02</span>
-                        <svg
-                          class="af-card__icon"
-                          viewBox="0 0 32 32"
-                          aria-hidden="true"
-                        >
-                          <rect x="6" y="18" width="3.5" height="8" />
-                          <rect x="12.5" y="12" width="3.5" height="14" />
-                          <rect x="19" y="8" width="3.5" height="18" />
-                          <circle
-                            class="af-ico-l-dot"
-                            cx="20.75"
-                            cy="7"
-                            r="1.4"
-                          />
+                <span class="af-flip__inner">
+                  <span class="af-face af-face--front">
+                    <span class="af-face__top">
+                      <span class="af-face__num">02</span>
+                      <span class="af-face__icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none">
+                          <path d="M5 18V11M10 18V7M15 18V13M20 18V5" />
                         </svg>
                       </span>
-                      <span class="af-card__letter" aria-hidden="true">L</span>
-                      <span class="af-card__title">Locate</span>
-                      <span class="af-card__rule" aria-hidden="true"></span>
-                      <span class="af-card__sub"
-                        >Find where the business is losing momentum.</span
-                      >
-                      <span class="af-card__arrow" aria-hidden="true">↗</span>
                     </span>
-                    <span
-                      class="af-card__face af-card__face--back"
-                      id="af-back-1"
-                      aria-hidden="true"
+                    <span class="af-face__letter" aria-hidden="true">L</span>
+                    <span class="af-face__name">Locate</span>
+                    <span class="af-face__desc"
+                      >Find where the business is losing momentum.</span
                     >
-                      <span class="af-card__back-top">
-                        <span class="af-card__back-index">02 / L</span>
-                        <span class="af-card__back-title">Locate</span>
-                      </span>
-                      <span
-                        class="af-card__back-rule"
-                        aria-hidden="true"
-                      ></span>
-                      <span class="af-card__back-kicker"
-                        >Find where the business is losing momentum.</span
-                      >
-                      <span class="af-card__back-copy">
-                        <span
-                          >We identify the gaps, bottlenecks, inefficiencies,
-                          risks and missed opportunities across the
-                          organization.</span
-                        >
-                        <span
-                          >Rather than treating symptoms, we trace problems back
-                          to their underlying causes.</span
-                        >
-                      </span>
-                      <span class="af-card__back-next"
-                        >Assess → Locate → Integrate</span
-                      >
-                    </span>
+                    <span class="af-face__arrow" aria-hidden="true">→</span>
                   </span>
-                </button>
-              </article>
+                  <span class="af-face af-face--back">
+                    <span class="af-face__meta">02 / L</span>
+                    <span class="af-face__name">Locate</span>
+                    <span class="af-face__copy"
+                      >We identify gaps, bottlenecks and root causes behind lost
+                      performance.</span
+                    >
+                    <span class="af-face__label">Key focus</span>
+                    <ul class="af-face__list">
+                      <li>Gap &amp; risk analysis</li>
+                      <li>Process audits</li>
+                      <li>Opportunity mapping</li>
+                    </ul>
+                  </span>
+                </span>
+              </button>
+            </article>
 
-              <!-- 03 Integrate -->
-              <article
-                class="af-card"
-                role="listitem"
-                data-stage="2"
-                data-neighbors="1,3"
+            <article class="af-flip" role="listitem" data-stage="2">
+              <button
+                class="af-flip__btn"
+                type="button"
+                aria-expanded="false"
+                aria-label="Integrate. Connect what isn’t working together. Flip for details."
               >
-                <button
-                  class="af-card__btn"
-                  type="button"
-                  id="af-card-2"
-                  aria-expanded="false"
-                  aria-controls="af-back-2"
-                >
-                  <span class="af-card__inner">
-                    <span class="af-card__face af-card__face--front">
-                      <span class="af-card__top">
-                        <span class="af-card__index">03</span>
-                        <svg
-                          class="af-card__icon"
-                          viewBox="0 0 32 32"
-                          aria-hidden="true"
-                        >
-                          <line
-                            class="af-ico-i-line af-ico-i-line--1"
-                            x1="8"
-                            y1="10"
-                            x2="24"
-                            y2="10"
-                          />
-                          <line
-                            class="af-ico-i-line af-ico-i-line--2"
-                            x1="24"
-                            y1="10"
-                            x2="16"
-                            y2="23"
-                          />
-                          <line
-                            class="af-ico-i-line af-ico-i-line--3"
-                            x1="16"
-                            y1="23"
-                            x2="8"
-                            y2="10"
-                          />
-                          <circle cx="8" cy="10" r="2" />
-                          <circle cx="24" cy="10" r="2" />
-                          <circle cx="16" cy="23" r="2" />
+                <span class="af-flip__inner">
+                  <span class="af-face af-face--front">
+                    <span class="af-face__top">
+                      <span class="af-face__num">03</span>
+                      <span class="af-face__icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none">
+                          <circle cx="6" cy="7" r="2.2" />
+                          <circle cx="18" cy="7" r="2.2" />
+                          <circle cx="12" cy="17" r="2.2" />
+                          <path d="M7.8 8.2 L10.4 15.2M16.2 8.2 L13.6 15.2M8.2 7 H15.8" />
                         </svg>
                       </span>
-                      <span class="af-card__letter" aria-hidden="true">I</span>
-                      <span class="af-card__title">Integrate</span>
-                      <span class="af-card__rule" aria-hidden="true"></span>
-                      <span class="af-card__sub"
-                        >Connect what isn’t working together.</span
-                      >
-                      <span class="af-card__arrow" aria-hidden="true">↗</span>
                     </span>
-                    <span
-                      class="af-card__face af-card__face--back"
-                      id="af-back-2"
-                      aria-hidden="true"
+                    <span class="af-face__letter" aria-hidden="true">I</span>
+                    <span class="af-face__name">Integrate</span>
+                    <span class="af-face__desc"
+                      >Connect what isn’t working together.</span
                     >
-                      <span class="af-card__back-top">
-                        <span class="af-card__back-index">03 / I</span>
-                        <span class="af-card__back-title">Integrate</span>
-                      </span>
-                      <span
-                        class="af-card__back-rule"
-                        aria-hidden="true"
-                      ></span>
-                      <span class="af-card__back-kicker"
-                        >Connect what isn’t working together.</span
-                      >
-                      <span class="af-card__back-copy">
-                        <span
-                          >We design solutions that bring people, processes and
-                          systems into alignment.</span
-                        >
-                        <span
-                          >Every recommendation is built around your
-                          business—not a pre-existing template or off-the-shelf
-                          solution.</span
-                        >
-                      </span>
-                      <span class="af-card__back-next"
-                        >Locate → Integrate → Grow</span
-                      >
-                    </span>
+                    <span class="af-face__arrow" aria-hidden="true">→</span>
                   </span>
-                </button>
-              </article>
+                  <span class="af-face af-face--back">
+                    <span class="af-face__meta">03 / I</span>
+                    <span class="af-face__name">Integrate</span>
+                    <span class="af-face__copy"
+                      >We design solutions that align people, processes and systems
+                      around the business.</span
+                    >
+                    <span class="af-face__label">Key focus</span>
+                    <ul class="af-face__list">
+                      <li>Solution design</li>
+                      <li>Process–system fit</li>
+                      <li>Operating model alignment</li>
+                    </ul>
+                  </span>
+                </span>
+              </button>
+            </article>
 
-              <!-- 04 Grow -->
-              <article
-                class="af-card"
-                role="listitem"
-                data-stage="3"
-                data-neighbors="2,4"
+            <article class="af-flip" role="listitem" data-stage="3">
+              <button
+                class="af-flip__btn"
+                type="button"
+                aria-expanded="false"
+                aria-label="Grow. Turn strategy into execution. Flip for details."
               >
-                <button
-                  class="af-card__btn"
-                  type="button"
-                  id="af-card-3"
-                  aria-expanded="false"
-                  aria-controls="af-back-3"
-                >
-                  <span class="af-card__inner">
-                    <span class="af-card__face af-card__face--front">
-                      <span class="af-card__top">
-                        <span class="af-card__index">04</span>
-                        <svg
-                          class="af-card__icon"
-                          viewBox="0 0 32 32"
-                          aria-hidden="true"
-                        >
-                          <path
-                            class="af-ico-g-line"
-                            d="M7 23 L14 16 L19 19 L26 9"
-                            fill="none"
-                          />
-                          <path
-                            class="af-ico-g-head"
-                            d="M22 9 H26 V13"
-                            fill="none"
-                          />
+                <span class="af-flip__inner">
+                  <span class="af-face af-face--front">
+                    <span class="af-face__top">
+                      <span class="af-face__num">04</span>
+                      <span class="af-face__icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none">
+                          <path d="M5 19 L19 5M11 5 H19 V13" />
                         </svg>
                       </span>
-                      <span class="af-card__letter" aria-hidden="true">G</span>
-                      <span class="af-card__title">Grow</span>
-                      <span class="af-card__rule" aria-hidden="true"></span>
-                      <span class="af-card__sub"
-                        >Turn strategy into execution.</span
-                      >
-                      <span class="af-card__arrow" aria-hidden="true">↗</span>
                     </span>
-                    <span
-                      class="af-card__face af-card__face--back"
-                      id="af-back-3"
-                      aria-hidden="true"
-                    >
-                      <span class="af-card__back-top">
-                        <span class="af-card__back-index">04 / G</span>
-                        <span class="af-card__back-title">Grow</span>
-                      </span>
-                      <span
-                        class="af-card__back-rule"
-                        aria-hidden="true"
-                      ></span>
-                      <span class="af-card__back-kicker"
-                        >Turn strategy into execution.</span
-                      >
-                      <span class="af-card__back-copy">
-                        <span
-                          >A good strategy means nothing if it stays on
-                          paper.</span
-                        >
-                        <span
-                          >We help implement the solution through structured
-                          processes, systems, responsibilities and execution
-                          frameworks that your team can actually adopt.</span
-                        >
-                      </span>
-                      <span class="af-card__back-next"
-                        >Integrate → Grow → Navigate</span
-                      >
-                    </span>
+                    <span class="af-face__letter" aria-hidden="true">G</span>
+                    <span class="af-face__name">Grow</span>
+                    <span class="af-face__desc">Turn strategy into execution.</span>
+                    <span class="af-face__arrow" aria-hidden="true">→</span>
                   </span>
-                </button>
-              </article>
+                  <span class="af-face af-face--back">
+                    <span class="af-face__meta">04 / G</span>
+                    <span class="af-face__name">Grow</span>
+                    <span class="af-face__copy"
+                      >We help implement processes and systems teams can adopt — so
+                      strategy doesn’t stay on paper.</span
+                    >
+                    <span class="af-face__label">Key focus</span>
+                    <ul class="af-face__list">
+                      <li>Implementation support</li>
+                      <li>Roles &amp; ownership</li>
+                      <li>Adoption &amp; enablement</li>
+                    </ul>
+                  </span>
+                </span>
+              </button>
+            </article>
 
-              <!-- 05 Navigate -->
-              <article
-                class="af-card"
-                role="listitem"
-                data-stage="4"
-                data-neighbors="3,5"
+            <article class="af-flip" role="listitem" data-stage="4">
+              <button
+                class="af-flip__btn"
+                type="button"
+                aria-expanded="false"
+                aria-label="Navigate. Know what is working—and what isn’t. Flip for details."
               >
-                <button
-                  class="af-card__btn"
-                  type="button"
-                  id="af-card-4"
-                  aria-expanded="false"
-                  aria-controls="af-back-4"
-                >
-                  <span class="af-card__inner">
-                    <span class="af-card__face af-card__face--front">
-                      <span class="af-card__top">
-                        <span class="af-card__index">05</span>
-                        <svg
-                          class="af-card__icon"
-                          viewBox="0 0 32 32"
-                          aria-hidden="true"
-                        >
-                          <circle cx="16" cy="16" r="9" fill="none" />
-                          <circle cx="16" cy="16" r="1.4" />
-                          <line
-                            class="af-ico-n-needle"
-                            x1="16"
-                            y1="16"
-                            x2="22"
-                            y2="9"
-                          />
+                <span class="af-flip__inner">
+                  <span class="af-face af-face--front">
+                    <span class="af-face__top">
+                      <span class="af-face__num">05</span>
+                      <span class="af-face__icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none">
+                          <circle cx="12" cy="12" r="8" />
+                          <path d="M12 12 L16 7" />
+                          <circle cx="12" cy="12" r="1.4" />
                         </svg>
                       </span>
-                      <span class="af-card__letter" aria-hidden="true">N</span>
-                      <span class="af-card__title">Navigate</span>
-                      <span class="af-card__rule" aria-hidden="true"></span>
-                      <span class="af-card__sub"
-                        >Know what is working—and what isn’t.</span
-                      >
-                      <span class="af-card__arrow" aria-hidden="true">↗</span>
                     </span>
-                    <span
-                      class="af-card__face af-card__face--back"
-                      id="af-back-4"
-                      aria-hidden="true"
+                    <span class="af-face__letter" aria-hidden="true">N</span>
+                    <span class="af-face__name">Navigate</span>
+                    <span class="af-face__desc"
+                      >Know what is working—and what isn’t.</span
                     >
-                      <span class="af-card__back-top">
-                        <span class="af-card__back-index">05 / N</span>
-                        <span class="af-card__back-title">Navigate</span>
-                      </span>
-                      <span
-                        class="af-card__back-rule"
-                        aria-hidden="true"
-                      ></span>
-                      <span class="af-card__back-kicker"
-                        >Know what is working—and what isn’t.</span
-                      >
-                      <span class="af-card__back-copy">
-                        <span
-                          >We establish meaningful KPIs, performance indicators
-                          and feedback mechanisms so leadership can see what is
-                          improving, where attention is needed and whether the
-                          solution is delivering results.</span
-                        >
-                      </span>
-                      <span class="af-card__back-next"
-                        >Grow → Navigate → Evolve</span
-                      >
-                    </span>
+                    <span class="af-face__arrow" aria-hidden="true">→</span>
                   </span>
-                </button>
-              </article>
+                  <span class="af-face af-face--back">
+                    <span class="af-face__meta">05 / N</span>
+                    <span class="af-face__name">Navigate</span>
+                    <span class="af-face__copy"
+                      >We establish KPIs and feedback loops so leadership can see
+                      what to improve next.</span
+                    >
+                    <span class="af-face__label">Key focus</span>
+                    <ul class="af-face__list">
+                      <li>KPI frameworks</li>
+                      <li>Performance visibility</li>
+                      <li>Decision reviews</li>
+                    </ul>
+                  </span>
+                </span>
+              </button>
+            </article>
 
-              <!-- 06 Evolve -->
-              <article
-                class="af-card"
-                role="listitem"
-                data-stage="5"
-                data-neighbors="4"
+            <article class="af-flip" role="listitem" data-stage="5">
+              <button
+                class="af-flip__btn"
+                type="button"
+                aria-expanded="false"
+                aria-label="Evolve. Because businesses don’t stand still. Flip for details."
               >
-                <button
-                  class="af-card__btn"
-                  type="button"
-                  id="af-card-5"
-                  aria-expanded="false"
-                  aria-controls="af-back-5"
-                >
-                  <span class="af-card__inner">
-                    <span class="af-card__face af-card__face--front">
-                      <span class="af-card__top">
-                        <span class="af-card__index">06</span>
-                        <svg
-                          class="af-card__icon"
-                          viewBox="0 0 32 32"
-                          aria-hidden="true"
-                        >
-                          <circle
-                            class="af-ico-e af-ico-e--1"
-                            cx="16"
-                            cy="16"
-                            r="3"
-                            fill="none"
-                          />
-                          <circle
-                            class="af-ico-e af-ico-e--2"
-                            cx="16"
-                            cy="16"
-                            r="7"
-                            fill="none"
-                            stroke-dasharray="2 2.5"
-                          />
-                          <circle
-                            class="af-ico-e af-ico-e--3"
-                            cx="16"
-                            cy="16"
-                            r="11"
-                            fill="none"
-                            stroke-dasharray="1.5 3"
-                          />
+                <span class="af-flip__inner">
+                  <span class="af-face af-face--front">
+                    <span class="af-face__top">
+                      <span class="af-face__num">06</span>
+                      <span class="af-face__icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none">
+                          <circle cx="12" cy="12" r="2" />
+                          <circle cx="12" cy="12" r="5.5" stroke-dasharray="1.5 2" />
+                          <circle cx="12" cy="12" r="9" stroke-dasharray="1 2.5" />
                         </svg>
                       </span>
-                      <span class="af-card__letter" aria-hidden="true">∞</span>
-                      <span class="af-card__title">Evolve</span>
-                      <span class="af-card__rule" aria-hidden="true"></span>
-                      <span class="af-card__sub"
-                        >Because businesses don’t stand still.</span
-                      >
-                      <span class="af-card__arrow" aria-hidden="true">↗</span>
                     </span>
-                    <span
-                      class="af-card__face af-card__face--back"
-                      id="af-back-5"
-                      aria-hidden="true"
+                    <span class="af-face__letter" aria-hidden="true">∞</span>
+                    <span class="af-face__name">Evolve</span>
+                    <span class="af-face__desc"
+                      >Because businesses don’t stand still.</span
                     >
-                      <span class="af-card__back-top">
-                        <span class="af-card__back-index">06 / ∞</span>
-                        <span class="af-card__back-title">Evolve</span>
-                      </span>
-                      <span
-                        class="af-card__back-rule"
-                        aria-hidden="true"
-                      ></span>
-                      <span class="af-card__back-kicker"
-                        >Because businesses don’t stand still.</span
-                      >
-                      <span class="af-card__back-copy">
-                        <span
-                          >We continuously review, refine and improve the system
-                          as your business, customers, people and market
-                          change.</span
-                        >
-                        <span
-                          >The objective isn’t simply to solve today’s problem.
-                          It’s to build a business capable of solving
-                          tomorrow’s.</span
-                        >
-                      </span>
-                      <span class="af-card__back-next"
-                        >Navigate → Evolve → ∞</span
-                      >
-                    </span>
+                    <span class="af-face__arrow" aria-hidden="true">→</span>
                   </span>
-                </button>
-              </article>
-            </div>
+                  <span class="af-face af-face--back">
+                    <span class="af-face__meta">06 / ∞</span>
+                    <span class="af-face__name">Evolve</span>
+                    <span class="af-face__copy"
+                      >We refine continuously as the business and market change —
+                      building lasting capability.</span
+                    >
+                    <span class="af-face__label">Key focus</span>
+                    <ul class="af-face__list">
+                      <li>Continuous improvement</li>
+                      <li>Capability building</li>
+                      <li>Long-term resilience</li>
+                    </ul>
+                  </span>
+                </span>
+              </button>
+            </article>
+          </div>
+
+          <div class="af-foot reveal">
+            <p class="af-flow">
+              Assess → Locate → Integrate → Grow → Navigate → Evolve
+            </p>
+            <p class="af-tag">
+              One framework. One connected approach. A business built to perform.
+            </p>
           </div>
         </div>
       </section>
@@ -1071,22 +822,23 @@
                   <span class="work-real-badge">PROJECT</span>
                 </div>
                 <p class="work-client">TJSB SAHAKARI BANK</p>
-                <h3>Credit Risk &amp;<br />Financial Performance</h3>
+                <h3>Credit Risk<br />Management Analysis</h3>
                 <dl class="work-ps">
                   <div>
                     <dt>Problem</dt>
                     <dd>
-                      Credit risk connects loan exposure, NPAs, interest income,
-                      capital adequacy and risk controls — and needed a
-                      structured view of how these factors interact.
+                      TJSB’s diversified and expanding loan portfolio required an
+                      assessment of whether its credit risk controls,
+                      asset-quality management and capital structure were
+                      adequately supporting sustainable financial performance.
                     </dd>
                   </div>
                   <div>
-                    <dt>Solution</dt>
+                    <dt>Approach</dt>
                     <dd>
-                      A structured financial and credit-risk assessment spanning
-                      the credit framework, loan portfolio, NPAs, capital and
-                      performance indicators.
+                      A five-year diagnostic of credit architecture, loan mix,
+                      risk appetite, asset quality, income, capital adequacy and
+                      statistical validation of NPAs against interest income.
                     </dd>
                   </div>
                 </dl>
@@ -1130,39 +882,47 @@
                   <span class="work-real-badge">PROJECT</span>
                 </div>
                 <p class="work-client">SUN INVESTMENTS</p>
-                <h3>Capital Markets &amp;<br />Investment</h3>
-                <dl class="work-ps">
+                <h3>
+                  Capital Markets &amp;<br />Investment Decision Support
+                </h3>
+                  <dl class="work-ps">
                   <div>
                     <dt>Problem</dt>
                     <dd>
-                      Mutual funds, IPOs and ETFs behave differently across
-                      risk, liquidity, cost, diversification and performance —
-                      and needed one structured comparison.
+                      Sun Investments operates across mutual funds, ETFs, IPOs
+                      and portfolio management. The challenge was to determine
+                      which instruments and strategies delivered the most
+                      attractive risk-adjusted outcomes, where investors were
+                      exposed to performance risks, and which market indicators
+                      could support more informed advisory decisions.
                     </dd>
                   </div>
                   <div>
                     <dt>Solution</dt>
                     <dd>
-                      A structured capital-markets and investment analysis
-                      comparing the three instruments and the factors that shape
-                      their relevance to investors.
+                      A data-driven capital markets assessment framework that
+                      compared the performance, risk, liquidity and efficiency of
+                      Mutual Funds, IPOs and ETFs — allowing investment decisions
+                      to be evaluated beyond headline returns.
                     </dd>
                   </div>
                 </dl>
-                <p class="work-tags">Finance · Capital Markets · Investment</p>
+                <p class="work-tags">
+                  Finance · Capital Markets · Investment Analytics
+                </p>
                 <a href="work/sun-investments/"
                   >Explore case study <span>↗</span></a
                 >
               </div>
               <div class="work-visual work-visual--featured" aria-hidden="true">
-                <div class="work-viz work-viz--markets">
+                  <div class="work-viz work-viz--markets">
                   <p class="work-viz__kicker">CAPITAL MARKETS</p>
                   <div class="work-viz__pillars">
                     <div><strong>01</strong><span>Mutual Funds</span></div>
                     <div><strong>02</strong><span>IPOs</span></div>
                     <div><strong>03</strong><span>ETFs</span></div>
                   </div>
-                  <p class="work-viz__note">Comparison · Analysis · Insight</p>
+                  <p class="work-viz__note">10 Years · KPI Framework · Decision Support</p>
                 </div>
               </div>
             </div>
@@ -1215,22 +975,35 @@
         </div>
         <div class="insight-grid">
           <article>
-            <span>01 / DEMO INSIGHT</span>
-            <h3>Why disconnected processes become expensive at scale</h3>
-            <p>Operations · Strategy</p>
-            <a href="contact.html">Read article ↗</a>
+            <span>01 / INSIGHT</span>
+            <h3>How a Business Consultant Helps Your Business Thrive</h3>
+            <p>Consulting · Strategy</p>
+            <a href="insights/how-a-business-consultant-helps-your-business-thrive/"
+              >Read article ↗</a
+            >
           </article>
           <article>
-            <span>02 / DEMO INSIGHT</span>
-            <h3>The hidden cost of manual business reporting</h3>
-            <p>Finance · Technology</p>
-            <a href="contact.html">Read article ↗</a>
+            <span>02 / INSIGHT</span>
+            <h3>
+              The Role and Impact of Business Consultants in Modern Business
+              Management
+            </h3>
+            <p>Consulting · Management</p>
+            <a
+              href="insights/the-role-and-impact-of-business-consultants-in-modern-business-management/"
+              >Read article ↗</a
+            >
           </article>
           <article>
-            <span>03 / DEMO INSIGHT</span>
-            <h3>When should a business automate a process?</h3>
-            <p>Automation · Operations</p>
-            <a href="contact.html">Read article ↗</a>
+            <span>03 / INSIGHT</span>
+            <h3>
+              5 Types of Business Consultancy Services You Needed But Didn't Know
+            </h3>
+            <p>Consulting · Operations</p>
+            <a
+              href="insights/5-types-of-business-consultancy-services-you-needed-but-didnt-know/"
+              >Read article ↗</a
+            >
           </article>
         </div>
       </section>

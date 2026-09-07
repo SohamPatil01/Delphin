@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Sun Investments — Capital Markets & Investment. A Delphin case study."
+      content="Sun Investments — Capital Markets & Investment Decision Support. A Delphin case study."
     />
     <title>Sun Investments — Selected Work — Delphin</title>
     <link rel="canonical" href="https://www.delphin.in/work/sun-investments/" />
@@ -17,10 +17,13 @@
     <meta name="theme-color" content="#f4f3ef" />
     <meta property="og:type" content="article" />
     <meta property="og:url" content="https://www.delphin.in/work/sun-investments/" />
-    <meta property="og:title" content="Sun Investments — Capital Markets & Investment" />
+    <meta
+      property="og:title"
+      content="Sun Investments — Capital Markets & Investment Decision Support"
+    />
     <meta
       property="og:description"
-      content="A capital-markets project comparing mutual funds, IPOs and ETFs across risk, liquidity, cost and performance."
+      content="A KPI-driven capital markets framework comparing Mutual Funds, IPOs and ETFs across return, risk, liquidity and efficiency."
     />
     <meta property="og:image" content="https://www.delphin.in/images/delphin-logo.png" />
     <meta property="og:site_name" content="Delphin" />
@@ -34,7 +37,6 @@
   </head>
   <body class="page-sub page-case page-case--sun">
     <div class="noise"></div>
-    <div class="progress"></div>
 
     <header class="nav" id="siteNav">
       <div class="nav-pill nav-pill-left">
@@ -62,310 +64,478 @@
     <main class="site-flow case-study">
       <section class="case-hero section-light">
         <div class="case-hero__inner reveal visible">
+          <a class="page-back" href="../../index.html#work" data-page-back>← Back</a>
           <p class="case-eyebrow">
             <span>03 / SELECTED WORK</span>
             <span aria-hidden="true">/</span>
             <span>PROJECT</span>
           </p>
           <p class="case-client">SUN INVESTMENTS</p>
-          <h1>Capital Markets &amp;<br />Investment</h1>
-          <p class="case-tags">Finance · Capital Markets · Investment</p>
+          <h1>Capital Markets &amp;<br />Investment Decision Support</h1>
+          <p class="case-tags">Finance · Capital Markets · Investment Analytics</p>
           <p class="case-lede">
-            A capital-markets project comparing mutual funds, IPOs and ETFs —
-            and the factors that shape their performance and relevance to
-            investors.
+            A structured, quantitative framework for evaluating Mutual Funds,
+            IPOs and ETFs — making investment-product research more consistent
+            and easier to translate into advisory insight.
           </p>
         </div>
       </section>
 
+      <!-- 01 Challenge -->
       <section class="case-section section-light">
         <div class="case-section__head reveal">
-          <p class="kicker">The problem</p>
-          <h2>Different instruments.<br /><em>Different behaviour.</em></h2>
+          <p class="kicker">01 / The challenge</p>
+          <h2>Investment product<br /><em>evaluation.</em></h2>
           <p>
-            Different investment instruments behave differently across risk,
-            liquidity, cost, diversification and performance.
+            An investment advisory business was evaluating Mutual Funds, IPOs and
+            ETFs, but the research process involved multiple datasets,
+            performance indicators and analytical approaches.
           </p>
           <p>
-            The challenge was to create a structured view of these differences
-            and understand the factors that influence their performance and
-            relevance to investors.
+            The opportunity was to create a standardized, quantitative framework
+            that could make investment-product evaluation faster, more consistent
+            and easier to translate into actionable advisory insights.
+          </p>
+        </div>
+        <div class="sun-path reveal" aria-label="From products to decision support">
+          <div class="sun-path__row">
+            <span>Mutual Funds</span>
+            <i aria-hidden="true">+</i>
+            <span>IPOs</span>
+            <i aria-hidden="true">+</i>
+            <span>ETFs</span>
+          </div>
+          <span class="sun-path__down" aria-hidden="true">↓</span>
+          <div class="sun-path__step">Multiple datasets</div>
+          <span class="sun-path__down" aria-hidden="true">↓</span>
+          <div class="sun-path__step">Multiple performance indicators</div>
+          <span class="sun-path__down" aria-hidden="true">↓</span>
+          <div class="sun-path__step sun-path__step--accent">Structured decision support</div>
+        </div>
+      </section>
+
+      <!-- 02 What we did -->
+      <section class="case-section section-light">
+        <div class="case-section__head reveal">
+          <p class="kicker">02 / What we did</p>
+          <h2>A KPI-driven<br /><em>evaluation framework.</em></h2>
+          <p>
+            We developed a KPI-driven Investment Product Evaluation Framework
+            covering investment performance, risk, efficiency and market
+            behaviour across Mutual Funds, IPOs and ETFs.
+          </p>
+        </div>
+        <div class="case-lenses sun-lenses" role="list" id="sunLenses">
+          <button class="case-lens is-active" type="button" data-lens="mf" aria-expanded="true">
+            <span>01</span><strong>Mutual Funds</strong>
+            <p>Performance, volatility and risk-adjusted returns.</p>
+          </button>
+          <button class="case-lens" type="button" data-lens="ipo" aria-expanded="false">
+            <span>02</span><strong>IPOs</strong>
+            <p>Listing performance and longer-term returns.</p>
+          </button>
+          <button class="case-lens" type="button" data-lens="etf" aria-expanded="false">
+            <span>03</span><strong>ETFs</strong>
+            <p>Returns, tracking error and liquidity.</p>
+          </button>
+        </div>
+        <div class="sun-lens-panel reveal" id="sunLensPanel" aria-live="polite">
+          <p class="sun-lens-panel__title" id="sunLensTitle">Mutual Funds</p>
+          <ul class="sun-lens-panel__list" id="sunLensList">
+            <li>Mutual Fund performance</li>
+            <li>Volatility</li>
+            <li>Risk-adjusted returns</li>
+            <li>AUM and fund-performance relationships</li>
+            <li>Comparative risk-return analysis</li>
+          </ul>
+        </div>
+        <div class="sun-methods-block reveal">
+          <p class="kicker">Core analytical methods</p>
+          <p class="sun-methods-block__line">
+            Correlation <i aria-hidden="true">+</i> Regression
           </p>
         </div>
       </section>
 
-      <section class="case-section section-light">
+      <!-- 03 Scale -->
+      <section class="case-section section-light" id="sun-scale">
         <div class="case-section__head reveal">
-          <p class="kicker">What we did</p>
-          <h2>Three markets.<br /><em>One framework.</em></h2>
+          <p class="kicker">03 / The scale</p>
+          <h2>The analysis<br /><em>at a glance.</em></h2>
+        </div>
+        <div class="sun-scale reveal" id="sunScale" role="list">
+          <button class="sun-scale__item" type="button" role="listitem" data-scale="years" aria-expanded="false" aria-controls="sunScalePanel">
+            <strong class="sun-count" data-count="10">0</strong>
+            <span>Years</span>
+            <em>Historical analysis period</em>
+          </button>
+          <button class="sun-scale__item" type="button" role="listitem" data-scale="cats" aria-expanded="false" aria-controls="sunScalePanel">
+            <strong class="sun-count" data-count="3">0</strong>
+            <span>Investment categories</span>
+            <em>Mutual Funds · IPOs · ETFs</em>
+          </button>
+          <button class="sun-scale__item" type="button" role="listitem" data-scale="ipos" aria-expanded="false" aria-controls="sunScalePanel">
+            <strong class="sun-count" data-count="164">0</strong>
+            <span>IPOs analysed</span>
+            <em>2018–2022</em>
+          </button>
+          <button class="sun-scale__item" type="button" role="listitem" data-scale="cohort" aria-expanded="false" aria-controls="sunScalePanel">
+            <strong class="sun-count" data-count="64">0</strong>
+            <span>IPOs analysed</span>
+            <em>2021</em>
+          </button>
+        </div>
+        <p class="sun-methods reveal">Correlation + Regression · Core analytical methods</p>
+        <div class="sun-expand" id="sunScalePanel" hidden>
+          <p class="sun-expand__label" id="sunScaleLabel"></p>
+          <p class="sun-expand__body" id="sunScaleBody"></p>
+        </div>
+      </section>
+
+      <!-- 04 Mutual funds -->
+      <section class="case-section section-light" id="sun-risk">
+        <div class="case-section__head reveal">
+          <p class="kicker">04 / Mutual Funds</p>
+          <h2>Return × Risk</h2>
           <p>
-            We worked across three major areas of the capital markets — mutual
-            funds, IPOs and ETFs — comparing their characteristics, performance,
-            risks and market behaviour.
+            We compared investment products across return, volatility and
+            risk-adjusted performance rather than looking at returns alone.
           </p>
         </div>
-        <div class="case-pillars">
-          <article class="reveal">
+
+        <div class="sun-scatter reveal" id="sunScatter">
+          <div
+            class="sun-scatter__chart"
+            id="sunScatterChart"
+            role="img"
+            aria-label="Scatter chart of mutual fund return versus volatility. Equity at 12.5 percent return and 18 percent volatility. Hybrid average return of 9 percent shown as a reference line."
+          ></div>
+          <div class="sun-tooltip" id="sunTooltip" hidden></div>
+          <div class="sun-scatter__aside">
+            <button class="sun-chip" type="button" data-fund="equity" aria-pressed="false">Equity</button>
+            <button class="sun-chip" type="button" data-fund="hybrid" aria-pressed="false">Hybrid</button>
+            <button class="sun-chip" type="button" data-fund="debt" aria-pressed="false">Debt</button>
+          </div>
+        </div>
+
+        <div class="sun-expand sun-expand--detail" id="sunFundPanel" hidden>
+          <p class="sun-expand__label" id="sunFundLabel"></p>
+          <div class="sun-metrics" id="sunFundMetrics"></div>
+          <p class="sun-expand__body" id="sunFundBody"></p>
+        </div>
+
+        <div class="sun-insight-block reveal">
+          <p class="sun-insight-block__lead">
+            Higher returns do not automatically translate into better investment
+            opportunities.
+          </p>
+          <p class="sun-insight-block__sub">
+            Equity mutual funds generated higher returns but also carried
+            substantially higher volatility, making risk-adjusted performance an
+            important part of product evaluation.
+          </p>
+        </div>
+      </section>
+
+      <!-- 05 Risk-adjusted metric visual -->
+      <section class="case-section section-light">
+        <div class="case-section__head reveal">
+          <p class="kicker">Risk-adjusted performance</p>
+          <h2>Return, volatility<br /><em>and Sharpe.</em></h2>
+        </div>
+        <div class="sun-compare reveal" role="list">
+          <article class="sun-compare__col" role="listitem">
+            <p class="sun-compare__name">Equity</p>
+            <div class="sun-compare__rows">
+              <div>
+                <span>Return</span>
+                <strong>12.5%</strong>
+                <i style="--w: 70%"></i>
+              </div>
+              <div>
+                <span>Volatility</span>
+                <strong>18.0%</strong>
+                <i style="--w: 100%"></i>
+              </div>
+              <div>
+                <span>Sharpe</span>
+                <strong>0.69</strong>
+                <i style="--w: 68%"></i>
+              </div>
+            </div>
+          </article>
+          <article class="sun-compare__col" role="listitem">
+            <p class="sun-compare__name">Debt</p>
+            <div class="sun-compare__rows">
+              <div>
+                <span>Sharpe</span>
+                <strong>1.02</strong>
+                <i style="--w: 100%"></i>
+              </div>
+            </div>
+            <p class="sun-compare__note">Return and volatility not in available project data.</p>
+          </article>
+          <article class="sun-compare__col" role="listitem">
+            <p class="sun-compare__name">Hybrid</p>
+            <div class="sun-compare__rows">
+              <div>
+                <span>Avg. return</span>
+                <strong>9.0%</strong>
+                <i style="--w: 50%"></i>
+              </div>
+            </div>
+            <p class="sun-compare__note">Volatility not in available project data.</p>
+          </article>
+        </div>
+      </section>
+
+      <!-- 06 IPO -->
+      <section class="case-section section-light" id="sun-ipo">
+        <div class="case-section__head reveal">
+          <p class="kicker">05 / IPOs</p>
+          <h2>Listing vs long-term<br /><em>performance.</em></h2>
+          <p>
+            IPO analysis showed a significant difference between initial listing
+            performance and longer-term returns.
+          </p>
+        </div>
+
+        <button class="sun-slope reveal" type="button" id="sunSlope" aria-expanded="false" aria-controls="sunIpoPanel">
+          <p class="sun-slope__kicker">2021 IPO cohort · 64 IPOs</p>
+          <div class="sun-slope__grid">
+            <div class="sun-slope__point sun-slope__point--start">
+              <strong>28.4%</strong>
+              <span>Average first-day return</span>
+            </div>
+            <svg class="sun-slope__line" viewBox="0 0 200 80" preserveAspectRatio="none" aria-hidden="true">
+              <path d="M8 12 L192 68" />
+              <circle cx="8" cy="12" r="3.5" />
+              <circle cx="192" cy="68" r="3.5" />
+            </svg>
+            <div class="sun-slope__point sun-slope__point--end">
+              <strong>15.6%</strong>
+              <span>Average 1-year return</span>
+            </div>
+          </div>
+        </button>
+
+        <div class="sun-expand" id="sunIpoPanel" hidden>
+          <dl class="sun-expand__dl">
+            <div><dt>IPOs analysed — 2021</dt><dd>64</dd></div>
+            <div><dt>Average first-day return — 2021</dt><dd>28.4%</dd></div>
+            <div><dt>Average 1-year return — 2021</dt><dd>15.6%</dd></div>
+            <div><dt>IPOs analysed — 2018–2022</dt><dd>164</dd></div>
+          </dl>
+        </div>
+
+        <div class="sun-insight-block reveal">
+          <p class="sun-insight-block__eq">Short-term ≠ Long-term</p>
+          <p class="sun-insight-block__sub">
+            The 2021 IPO cohort recorded an average first-day return of 28.4%,
+            compared with an average one-year return of 15.6%.
+          </p>
+          <p class="sun-insight-block__sub">
+            Initial listing performance did not tell the full longer-term story.
+          </p>
+        </div>
+      </section>
+
+      <!-- 07 ETF -->
+      <section class="case-section section-light" id="sun-etf">
+        <div class="case-section__head reveal">
+          <p class="kicker">06 / ETFs</p>
+          <h2>Return · Efficiency<br /><em>· Liquidity</em></h2>
+          <p>
+            ETF analysis demonstrated the importance of evaluating return,
+            liquidity and tracking efficiency together, rather than relying solely
+            on historical returns.
+          </p>
+        </div>
+
+        <div class="sun-etf reveal" id="sunEtf" role="list">
+          <button class="sun-etf__item" type="button" role="listitem" data-etf="return" aria-expanded="false" aria-controls="sunEtfPanel">
+            <strong>10.2%</strong>
+            <span>Equity ETF · Average return</span>
+          </button>
+          <button class="sun-etf__item" type="button" role="listitem" data-etf="track" aria-expanded="false" aria-controls="sunEtfPanel">
+            <strong>0.52%</strong>
+            <span>Equity ETF · Tracking error</span>
+          </button>
+          <button class="sun-etf__item" type="button" role="listitem" data-etf="liq" aria-expanded="false" aria-controls="sunEtfPanel">
+            <strong>250M</strong>
+            <span>Equity ETF · Liquidity</span>
+          </button>
+          <button class="sun-etf__item sun-etf__item--bond" type="button" role="listitem" data-etf="bond" aria-expanded="false" aria-controls="sunEtfPanel">
+            <strong>0.34%</strong>
+            <span>Bond ETF · Tracking error</span>
+          </button>
+        </div>
+
+        <div class="sun-expand" id="sunEtfPanel" hidden>
+          <p class="sun-expand__label" id="sunEtfLabel"></p>
+          <p class="sun-expand__body" id="sunEtfBody"></p>
+        </div>
+
+        <div class="sun-insight-block reveal">
+          <p class="sun-insight-block__eq">Return is not enough.</p>
+          <p class="sun-insight-block__sub">
+            ETF evaluation requires return, liquidity and tracking efficiency to
+            be considered together.
+          </p>
+        </div>
+      </section>
+
+      <!-- 08 What the numbers revealed -->
+      <section class="case-section section-light" id="sun-insights">
+        <div class="case-section__head reveal">
+          <p class="kicker">07 / What the numbers revealed</p>
+          <h2>Performance<br /><em>needs context.</em></h2>
+          <p>
+            The analysis showed that higher returns did not automatically
+            translate into better investment opportunities.
+          </p>
+        </div>
+
+        <div class="sun-findings reveal" id="sunFindings" role="list">
+          <button class="sun-finding" type="button" role="listitem" data-finding="risk" aria-expanded="false" aria-controls="sunFindingPanel">
             <span>01</span>
-            <h3>Mutual funds</h3>
-            <ul>
-              <li>Structure</li>
-              <li>Types</li>
-              <li>Performance</li>
-              <li>Risk</li>
-              <li>Diversification</li>
-            </ul>
-          </article>
-          <article class="reveal">
+            <strong>Return ≠ Risk</strong>
+          </button>
+          <button class="sun-finding" type="button" role="listitem" data-finding="term" aria-expanded="false" aria-controls="sunFindingPanel">
             <span>02</span>
-            <h3>IPOs</h3>
-            <ul>
-              <li>Issuance</li>
-              <li>Pricing</li>
-              <li>Investor demand</li>
-              <li>Listing performance</li>
-            </ul>
-          </article>
-          <article class="reveal">
+            <strong>Short term ≠ Long term</strong>
+            <em aria-hidden="true">28.4% → 15.6%</em>
+          </button>
+          <button class="sun-finding" type="button" role="listitem" data-finding="whole" aria-expanded="false" aria-controls="sunFindingPanel">
             <span>03</span>
-            <h3>ETFs</h3>
-            <ul>
-              <li>Liquidity</li>
-              <li>Cost</li>
-              <li>Diversification</li>
-              <li>Market performance</li>
-            </ul>
-          </article>
+            <strong>Return ≠ The whole story</strong>
+          </button>
         </div>
-        <div class="case-flow case-flow--column reveal" aria-label="Project flow" style="margin-top:48px">
-          <div class="case-flow__item">Mutual funds</div>
-          <span class="case-flow__arrow case-flow__arrow--down" aria-hidden="true"></span>
-          <div class="case-flow__item">IPOs</div>
-          <span class="case-flow__arrow case-flow__arrow--down" aria-hidden="true"></span>
-          <div class="case-flow__item">ETFs</div>
-          <span class="case-flow__arrow case-flow__arrow--down" aria-hidden="true"></span>
-          <div class="case-flow__item">Comparison</div>
-          <span class="case-flow__arrow case-flow__arrow--down" aria-hidden="true"></span>
-          <div class="case-flow__item">Financial analysis</div>
-          <span class="case-flow__arrow case-flow__arrow--down" aria-hidden="true"></span>
-          <div class="case-flow__item case-flow__item--accent">Investment insights</div>
+
+        <div class="sun-expand" id="sunFindingPanel" hidden>
+          <p class="sun-expand__label" id="sunFindingLabel"></p>
+          <div class="sun-expand__rich" id="sunFindingRich"></div>
+          <p class="sun-expand__body" id="sunFindingBody"></p>
         </div>
       </section>
 
-      <section class="case-section section-light">
+      <!-- 09 Business impact -->
+      <section class="case-section section-light" id="sun-impact">
         <div class="case-section__head reveal">
-          <p class="kicker">What we delivered</p>
-          <h2>From market data<br /><em>to investment insight.</em></h2>
-        </div>
-        <ol class="case-arch-flow reveal">
-          <li><span>01</span><strong>Market data</strong></li>
-          <li><span>02</span><strong>Collection</strong></li>
-          <li><span>03</span><strong>Analysis</strong></li>
-          <li><span>04</span><strong>Comparison</strong></li>
-          <li><span>05</span><strong>Interpretation</strong></li>
-          <li><span>06</span><strong>Investment insight</strong></li>
-        </ol>
-      </section>
-
-      <section class="case-section section-light">
-        <div class="case-section__head reveal">
-          <p class="kicker">Mutual funds</p>
-          <h2>Structure, types<br /><em>and diversification.</em></h2>
+          <p class="kicker">08 / Business impact</p>
+          <h2>What advisors<br /><em>could do next.</em></h2>
           <p>
-            The project covered equity funds, debt funds, hybrid funds,
-            sector-specific funds, regulatory considerations, performance and
-            diversification.
+            The framework made the advisory research process more structured by
+            establishing a common KPI system across different investment products.
           </p>
         </div>
-        <div class="case-diversify reveal" aria-label="Diversification diagram">
-          <div class="case-diversify__top">Equity</div>
-          <div class="case-diversify__mid">
-            <span>Debt</span>
-            <span>Hybrid</span>
-            <span>Sector</span>
+
+        <div class="sun-impact-flow reveal" aria-hidden="true">
+          <div class="sun-impact-flow__step">
+            <span>From</span>
+            <strong>Analysis</strong>
           </div>
-          <div class="case-diversify__end">Portfolio</div>
+          <span class="sun-impact-flow__arrow">→</span>
+          <div class="sun-impact-flow__step sun-impact-flow__step--accent">
+            <span>To</span>
+            <strong>Advisory</strong>
+          </div>
         </div>
-      </section>
 
-      <section class="case-section section-light">
-        <div class="case-section__head reveal">
-          <p class="kicker">Initial public offerings</p>
-          <h2>The IPO journey<br /><em>as an analytical path.</em></h2>
-          <p>
-            The project examined IPO performance over a period of one year and
-            covered pricing strategies, investor demand and market behaviour.
-          </p>
-        </div>
-        <div class="case-flow case-flow--column reveal" aria-label="IPO journey">
-          <div class="case-flow__item">Company</div>
-          <span class="case-flow__arrow case-flow__arrow--down" aria-hidden="true"></span>
-          <div class="case-flow__item">Filing</div>
-          <span class="case-flow__arrow case-flow__arrow--down" aria-hidden="true"></span>
-          <div class="case-flow__item">Pricing</div>
-          <span class="case-flow__arrow case-flow__arrow--down" aria-hidden="true"></span>
-          <div class="case-flow__item">Issue</div>
-          <span class="case-flow__arrow case-flow__arrow--down" aria-hidden="true"></span>
-          <div class="case-flow__item">Listing</div>
-          <span class="case-flow__arrow case-flow__arrow--down" aria-hidden="true"></span>
-          <div class="case-flow__item case-flow__item--accent">Market performance</div>
-        </div>
-      </section>
-
-      <section class="case-section section-light">
-        <div class="case-section__head reveal">
-          <p class="kicker">Exchange-traded funds</p>
-          <h2>Liquidity, cost<br /><em>and transparency.</em></h2>
-        </div>
-        <div class="case-etf-traits reveal">
-          <span>Liquidity</span>
-          <span>Diversification</span>
-          <span>Cost</span>
-          <span>Transparency</span>
-          <span>Risk</span>
-        </div>
-        <div class="case-compare-mini reveal">
-          <h3>Mutual funds vs ETFs</h3>
-          <p>
-            Compared across dimensions covered in the project — without implying
-            that one instrument is universally better.
-          </p>
-          <div class="case-compare-mini__grid">
-            <div>
-              <strong>Mutual funds</strong>
-              <ul>
-                <li>Cost considerations</li>
-                <li>Diversification</li>
-                <li>Risk characteristics</li>
-              </ul>
-            </div>
-            <div>
-              <strong>ETFs</strong>
-              <ul>
-                <li>Liquidity</li>
-                <li>Cost considerations</li>
-                <li>Diversification</li>
-                <li>Risk characteristics</li>
-              </ul>
-            </div>
+        <div class="sun-impact-grid reveal" role="list" aria-label="Business impact">
+          <div class="sun-impact-item" role="listitem">
+            <span>01</span>
+            <strong>Compare products using consistent quantitative measures</strong>
+          </div>
+          <div class="sun-impact-item" role="listitem">
+            <span>02</span>
+            <strong>Evaluate return relative to risk</strong>
+          </div>
+          <div class="sun-impact-item" role="listitem">
+            <span>03</span>
+            <strong>Identify short-term versus sustainable performance</strong>
+          </div>
+          <div class="sun-impact-item" role="listitem">
+            <span>04</span>
+            <strong>Assess liquidity and tracking efficiency</strong>
+          </div>
+          <div class="sun-impact-item" role="listitem">
+            <span>05</span>
+            <strong>Identify areas requiring deeper research</strong>
+          </div>
+          <div class="sun-impact-item" role="listitem">
+            <span>06</span>
+            <strong>Structure investor discussions around measurable evidence</strong>
+          </div>
+          <div class="sun-impact-item" role="listitem">
+            <span>07</span>
+            <strong>Reduce repetitive product-level analysis</strong>
+          </div>
+          <div class="sun-impact-item" role="listitem">
+            <span>08</span>
+            <strong>Create a repeatable framework for future product monitoring</strong>
           </div>
         </div>
       </section>
 
-      <section class="case-section section-light">
+      <!-- 10 Decision framework -->
+      <section class="case-section section-light" id="sun-framework">
         <div class="case-section__head reveal">
-          <p class="kicker">Comparative analysis</p>
-          <h2>Three instruments.<br /><em>One framework.</em></h2>
+          <p class="kicker">09 / The decision framework</p>
+          <h2>From measure<br /><em>to suitability.</em></h2>
         </div>
-        <div class="case-table-wrap reveal">
-          <table class="case-table">
-            <thead>
-              <tr>
-                <th scope="col">Dimension</th>
-                <th scope="col">Mutual funds</th>
-                <th scope="col">IPOs</th>
-                <th scope="col">ETFs</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <th scope="row">Purpose</th>
-                <td>Pooled investment vehicles</td>
-                <td>Primary market issuance</td>
-                <td>Exchange-traded baskets</td>
-              </tr>
-              <tr>
-                <th scope="row">Risk characteristics</th>
-                <td>Varies by fund type</td>
-                <td>Issue and listing risk</td>
-                <td>Market and tracking risk</td>
-              </tr>
-              <tr>
-                <th scope="row">Liquidity</th>
-                <td>Fund-dependent</td>
-                <td>Post-listing market</td>
-                <td>Intraday exchange liquidity</td>
-              </tr>
-              <tr>
-                <th scope="row">Diversification</th>
-                <td>Across holdings / styles</td>
-                <td>Single-issuer exposure</td>
-                <td>Index / basket exposure</td>
-              </tr>
-              <tr>
-                <th scope="row">Cost considerations</th>
-                <td>Expense structures</td>
-                <td>Issue / market costs</td>
-                <td>Lower-cost access themes</td>
-              </tr>
-              <tr>
-                <th scope="row">Performance analysis</th>
-                <td>Fund returns &amp; peers</td>
-                <td>One-year listing performance</td>
-                <td>Market performance views</td>
-              </tr>
-              <tr>
-                <th scope="row">Investor relevance</th>
-                <td>Portfolio building</td>
-                <td>New issue participation</td>
-                <td>Flexible market access</td>
-              </tr>
-            </tbody>
-          </table>
+        <div class="sun-frame reveal" id="sunFrame" aria-label="Decision framework">
+          <span class="sun-frame__step">Return</span>
+          <span class="sun-frame__arrow" aria-hidden="true">→</span>
+          <span class="sun-frame__step">Risk</span>
+          <span class="sun-frame__arrow" aria-hidden="true">→</span>
+          <span class="sun-frame__step">Efficiency</span>
+          <span class="sun-frame__arrow" aria-hidden="true">→</span>
+          <span class="sun-frame__step">Liquidity</span>
+          <span class="sun-frame__arrow" aria-hidden="true">→</span>
+          <span class="sun-frame__step">Sustainability</span>
+          <span class="sun-frame__arrow" aria-hidden="true">→</span>
+          <span class="sun-frame__step sun-frame__step--end">Suitability</span>
         </div>
       </section>
 
-      <section class="case-section section-light">
+      <!-- 11 Outcome -->
+      <section class="case-section section-light" id="sun-outcome">
         <div class="case-section__head reveal">
-          <p class="kicker">Project methods</p>
-          <h2>From data<br /><em>to insight.</em></h2>
+          <p class="kicker">10 / The outcome</p>
+          <h2>Structured<br /><em>decision support.</em></h2>
           <p>
-            The work focused on collecting, processing and analysing datasets and
-            interpreting financial statements, performance metrics and market
-            data.
+            The engagement transformed a broad capital-markets research
+            requirement into a structured, repeatable and KPI-driven
+            decision-support framework.
           </p>
         </div>
-        <ol class="case-arch-flow reveal">
-          <li><span>01</span><strong>Data collection</strong></li>
-          <li><span>02</span><strong>Financial metrics</strong></li>
-          <li><span>03</span><strong>Market trends</strong></li>
-          <li><span>04</span><strong>Comparative analysis</strong></li>
-          <li><span>05</span><strong>Interpretation</strong></li>
-        </ol>
-        <div class="case-frameworks reveal">
-          <p class="kicker">Frameworks applied</p>
-          <div class="case-frameworks__list">
-            <span>Modern Portfolio Theory</span>
-            <span>Efficient Market Hypothesis</span>
-            <span>Capital Asset Pricing Model</span>
+        <div class="sun-transform reveal">
+          <div class="sun-transform__from">
+            <span>Fragmented</span>
+            <strong>Market data</strong>
           </div>
-          <p class="case-note">
-            Used as analytical frameworks within the project — not as claims that
-            a specific investment strategy was implemented.
-          </p>
+          <span class="sun-transform__arrow" aria-hidden="true">↓</span>
+          <div class="sun-transform__to">
+            <span>Structured</span>
+            <strong>Decision support</strong>
+          </div>
+        </div>
+        <div class="case-flow case-flow--column reveal" aria-label="From research to decision support" style="margin-top:40px;max-width:280px">
+          <div class="case-flow__item">Research</div>
+          <span class="case-flow__arrow case-flow__arrow--down" aria-hidden="true"></span>
+          <div class="case-flow__item case-flow__item--accent">Decision support</div>
         </div>
       </section>
 
+      <!-- 12 Final -->
       <section class="case-section section-light">
         <div class="case-section__head reveal">
-          <p class="kicker">Key insight</p>
-          <h2>
-            One structured framework<br /><em>for capital markets.</em>
-          </h2>
-          <p>
-            The project brought different investment instruments into one
-            structured framework, making it easier to compare their
-            characteristics, trade-offs and market behaviour.
+          <p class="sun-final">
+            From fragmented market data<br />to structured intelligence.
           </p>
+          <p class="sun-final-sub">From research to decision support.</p>
         </div>
-        <ol class="case-policy reveal">
-          <li><span>01</span><strong>Mutual fund analysis</strong></li>
-          <li><span>02</span><strong>IPO analysis</strong></li>
-          <li><span>03</span><strong>ETF analysis</strong></li>
-          <li><span>04</span><strong>Risk, liquidity and cost comparison</strong></li>
-          <li><span>05</span><strong>Diversification and performance analysis</strong></li>
-          <li><span>06</span><strong>Market trends and investment frameworks</strong></li>
-        </ol>
         <a class="case-back" href="../../index.html#work">← Back to selected work</a>
       </section>
     </main>
@@ -394,5 +564,6 @@
 
     <script src="../../script.js"></script>
     <script src="../../work-case.js"></script>
+    <script src="../../sun-case.js"></script>
   </body>
 </html>
